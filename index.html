@@ -1,853 +1,813 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
+<!DOCTYPE html>
+<html lang="es">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title></title>
-  <meta name="Generator" content="Cocoa HTML Writer">
-  <meta name="CocoaVersion" content="2022.7">
-  <style type="text/css">
-    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; line-height: 21.0px; font: 14.0px Menlo; color: #6d6d6d; -webkit-text-stroke: #6d6d6d}
-    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; line-height: 21.0px; font: 14.0px Menlo; color: #6b0001; -webkit-text-stroke: #6b0001}
-    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; line-height: 21.0px; font: 14.0px Menlo; color: #fb0007; -webkit-text-stroke: #fb0007}
-    p.p4 {margin: 0.0px 0.0px 0.0px 0.0px; line-height: 21.0px; font: 14.0px Menlo; color: #0000ff; -webkit-text-stroke: #0000ff}
-    p.p5 {margin: 0.0px 0.0px 0.0px 0.0px; line-height: 21.0px; font: 14.0px Menlo; color: #000000; -webkit-text-stroke: #000000}
-    p.p6 {margin: 0.0px 0.0px 0.0px 0.0px; line-height: 21.0px; font: 14.0px Menlo; color: #18702b; -webkit-text-stroke: #18702b}
-    p.p7 {margin: 0.0px 0.0px 0.0px 0.0px; line-height: 21.0px; font: 14.0px Menlo; color: #000000; -webkit-text-stroke: #000000; min-height: 16.0px}
-    p.p8 {margin: 0.0px 0.0px 0.0px 0.0px; line-height: 21.0px; font: 14.0px Menlo; color: #4d5055; -webkit-text-stroke: #4d5055}
-    p.p9 {margin: 0.0px 0.0px 0.0px 0.0px; line-height: 21.0px; font: 14.0px Menlo; color: #093c94; -webkit-text-stroke: #093c94}
-    p.p10 {margin: 0.0px 0.0px 0.0px 0.0px; line-height: 21.0px; font: 14.0px Menlo; color: #0e6e6d; -webkit-text-stroke: #0e6e6d}
-    span.s1 {font-kerning: none; background-color: #ecf1f7}
-    span.s2 {font-kerning: none; color: #fb0007; background-color: #ecf1f7; -webkit-text-stroke: 0px #fb0007}
-    span.s3 {font-kerning: none; color: #2a2a2a; background-color: #ecf1f7; -webkit-text-stroke: 0px #2a2a2a}
-    span.s4 {font-kerning: none; color: #000000; background-color: #ecf1f7; -webkit-text-stroke: 0px #000000}
-    span.s5 {font-kerning: none; color: #0000ff; background-color: #ecf1f7; -webkit-text-stroke: 0px #0000ff}
-    span.s6 {font-kerning: none; color: #6b0001; background-color: #ecf1f7; -webkit-text-stroke: 0px #6b0001}
-    span.s7 {font-kerning: none; color: #6f0ec3; background-color: #ecf1f7; -webkit-text-stroke: 0px #6f0ec3}
-    span.s8 {font-kerning: none; color: #093c94; background-color: #ecf1f7; -webkit-text-stroke: 0px #093c94}
-    span.s9 {font-kerning: none; color: #18702b; background-color: #ecf1f7; -webkit-text-stroke: 0px #18702b}
-    span.s10 {font-kerning: none; color: #137646; background-color: #ecf1f7; -webkit-text-stroke: 0px #137646}
-    span.s11 {font-kerning: none}
-    span.s12 {font-kerning: none; color: #0e6e6d; background-color: #ecf1f7; -webkit-text-stroke: 0px #0e6e6d}
-    span.s13 {font-kerning: none; color: #a4450b; background-color: #ecf1f7; -webkit-text-stroke: 0px #a4450b}
-    span.s14 {font-kerning: none; color: #4d5055; background-color: #ecf1f7; -webkit-text-stroke: 0px #4d5055}
-    span.s15 {font: 14.0px 'Apple Color Emoji'; font-kerning: none; color: #18702b; background-color: #ecf1f7; -webkit-text-stroke: 0px #18702b}
-    span.s16 {font: 14.0px 'Apple Color Emoji'; font-kerning: none; background-color: #ecf1f7}
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Armonía Bloqueada: El Tetris de la Tensión Musical</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+        
+        body {
+            background-color: #121212;
+            color: #E0E0E0;
+            font-family: 'Orbitron', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        #game-container {
+            display: flex;
+            gap: 24px;
+            max-width: 1200px;
+            width: 100%;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        #canvas-wrapper {
+            background-color: #000000;
+            border: 8px solid #3A3A3A;
+            box-shadow: 0 0 25px rgba(0, 255, 255, 0.5);
+            border-radius: 12px;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-shrink: 0;
+        }
+
+        #game-canvas {
+            display: block;
+            border-radius: 4px;
+        }
+
+        #info-panel {
+            min-width: 250px;
+            background-color: #1F1F1F;
+            padding: 24px;
+            border-radius: 12px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .info-card {
+            background-color: #2D2D2D;
+            padding: 12px;
+            border-radius: 8px;
+            border-left: 5px solid #00FFD5;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .info-card h3 {
+            font-weight: 700;
+            color: #00FFD5;
+            margin-bottom: 4px;
+            font-size: 0.9rem;
+        }
+
+        .info-card p {
+            font-size: 1.5rem;
+            color: #FFFFFF;
+        }
+
+        /* Next Piece Display */
+        #next-piece-display {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(4, 1fr);
+            gap: 1px;
+            width: 80px;
+            height: 80px;
+            margin: 10px auto;
+            background-color: #000000;
+            border: 2px solid #555;
+            border-radius: 4px;
+        }
+        .next-block {
+            background-color: transparent;
+        }
+
+        /* Botones de control (ocultos en escritorio) */
+        .controls {
+            display: none;
+            width: 100%;
+            justify-content: center;
+            margin-top: 20px;
+            gap: 10px;
+        }
+
+        .control-btn {
+            background-color: #00FFD5;
+            color: #121212;
+            padding: 15px 20px;
+            border: none;
+            border-radius: 8px;
+            font-weight: 700;
+            cursor: pointer;
+            box-shadow: 0 4px 0 #00A38B;
+            transition: all 0.1s;
+            flex: 1;
+            max-width: 150px;
+        }
+
+        .control-btn:active {
+            box-shadow: 0 1px 0 #00A38B;
+            transform: translateY(3px);
+        }
+
+        /* Estilos del Modal del Quiz */
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.85);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            backdrop-filter: blur(5px);
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+
+        .modal.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal-content {
+            background-color: #1F1F1F;
+            padding: 30px;
+            border-radius: 15px;
+            max-width: 500px;
+            width: 90%;
+            text-align: center;
+            box-shadow: 0 0 30px rgba(0, 255, 255, 0.7);
+            transform: scale(0.9);
+            transition: transform 0.3s ease;
+        }
+
+        .modal.active .modal-content {
+            transform: scale(1);
+        }
+
+        .modal-content h2 {
+            font-size: 1.8rem;
+            color: #FFD500;
+            margin-bottom: 20px;
+            text-shadow: 1px 1px 5px rgba(255, 213, 0, 0.5);
+        }
+
+        .modal-content p {
+            font-size: 1.1rem;
+            margin-bottom: 25px;
+            line-height: 1.4;
+        }
+
+        .option-btn {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 10px;
+            background-color: #3A3A3A;
+            color: #FFFFFF;
+            border: 2px solid #555;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.15s, border-color 0.15s, transform 0.1s;
+        }
+
+        .option-btn:hover {
+            background-color: #555;
+            border-color: #00FFD5;
+        }
+        
+        .option-btn.selected {
+            background-color: #00FFD5;
+            color: #121212;
+            font-weight: 700;
+            border-color: #00FFD5;
+        }
+
+        .quiz-submit-btn {
+            margin-top: 20px;
+            background-color: #FFD500;
+            color: #121212;
+            padding: 15px 30px;
+            font-weight: 700;
+            border-radius: 8px;
+            box-shadow: 0 4px 0 #CCAA00;
+        }
+
+        .quiz-submit-btn:active {
+            box-shadow: 0 1px 0 #CCAA00;
+            transform: translateY(3px);
+        }
+
+        /* Media Queries para responsividad */
+        @media (max-width: 768px) {
+            #game-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            #info-panel {
+                width: 100%;
+                max-width: 400px;
+                order: -1;
+            }
+
+            .controls {
+                display: flex;
+            }
+        }
+    </style>
 </head>
 <body>
-<p class="p1"><span class="s1">&lt;!DOCTYPE</span><span class="s2"> html</span><span class="s1">&gt;</span></p>
-<p class="p2"><span class="s3">&lt;</span><span class="s1">html</span><span class="s4"> </span><span class="s2">lang</span><span class="s3">=</span><span class="s5">"es"</span><span class="s3">&gt;</span></p>
-<p class="p2"><span class="s3">&lt;</span><span class="s1">head</span><span class="s3">&gt;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s6">meta</span><span class="s4"> </span><span class="s1">charset</span><span class="s3">=</span><span class="s5">"UTF-8"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s6">meta</span><span class="s4"> </span><span class="s2">name</span><span class="s3">=</span><span class="s1">"viewport"</span><span class="s4"> </span><span class="s2">content</span><span class="s3">=</span><span class="s1">"width=device-width, initial-scale=1.0"</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s6">title</span><span class="s3">&gt;</span><span class="s1">Armonía Bloqueada: El Tetris de la Tensión Musical</span><span class="s3">&lt;/</span><span class="s6">title</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s6">script</span><span class="s4"> </span><span class="s2">src</span><span class="s3">=</span><span class="s1">"https://cdn.tailwindcss.com"</span><span class="s3">&gt;&lt;/</span><span class="s6">script</span><span class="s3">&gt;</span></p>
-<p class="p2"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s1">style</span><span class="s3">&gt;</span></p>
-<p class="p6"><span class="s4"><span class="Apple-converted-space">        </span></span><span class="s7">@import</span><span class="s4"> </span><span class="s8">url</span><span class="s4">(</span><span class="s1">'https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&amp;display=swap'</span><span class="s4">);</span></p>
-<p class="p7"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s6">body</span><span class="s1"> {</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s1">background-color:</span><span class="s4"> </span><span class="s8">#121212</span><span class="s4">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">color:</span><span class="s1"> </span><span class="s8">#E0E0E0</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">font-family:</span><span class="s1"> </span><span class="s9">'Orbitron'</span><span class="s1">, </span><span class="s8">sans-serif</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">display:</span><span class="s1"> </span><span class="s8">flex</span><span class="s1">;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s1">justify-content:</span><span class="s4"> </span><span class="s8">center</span><span class="s4">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">align-items:</span><span class="s1"> </span><span class="s8">flex-start</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">min-height:</span><span class="s1"> </span><span class="s10">100vh</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">padding:</span><span class="s1"> </span><span class="s10">20px</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p7"><span class="s11"></span><br></p>
-<p class="p2"><span class="s4"><span class="Apple-converted-space">        </span></span><span class="s1">#game-container</span><span class="s4"> {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">display:</span><span class="s1"> </span><span class="s8">flex</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">gap:</span><span class="s1"> </span><span class="s10">24px</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">max-width:</span><span class="s1"> </span><span class="s10">1200px</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">width:</span><span class="s1"> </span><span class="s10">100%</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">flex-wrap:</span><span class="s1"> </span><span class="s8">wrap</span><span class="s1">;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s1">justify-content:</span><span class="s4"> </span><span class="s8">center</span><span class="s4">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p7"><span class="s11"></span><br></p>
-<p class="p2"><span class="s4"><span class="Apple-converted-space">        </span></span><span class="s1">#canvas-wrapper</span><span class="s4"> {</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s1">background-color:</span><span class="s4"> </span><span class="s8">#000000</span><span class="s4">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">border:</span><span class="s1"> </span><span class="s10">8px</span><span class="s1"> </span><span class="s8">solid</span><span class="s1"> </span><span class="s8">#3A3A3A</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">box-shadow:</span><span class="s1"> </span><span class="s10">0</span><span class="s1"> </span><span class="s10">0</span><span class="s1"> </span><span class="s10">25px</span><span class="s1"> </span><span class="s8">rgba(</span><span class="s10">0</span><span class="s1">, </span><span class="s10">255</span><span class="s1">, </span><span class="s10">255</span><span class="s1">, </span><span class="s10">0.5</span><span class="s8">)</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">border-radius:</span><span class="s1"> </span><span class="s10">12px</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">overflow:</span><span class="s1"> </span><span class="s8">hidden</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">display:</span><span class="s1"> </span><span class="s8">flex</span><span class="s1">;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s1">justify-content:</span><span class="s4"> </span><span class="s8">center</span><span class="s4">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">align-items:</span><span class="s1"> </span><span class="s8">center</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">flex-shrink:</span><span class="s1"> </span><span class="s10">0</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p7"><span class="s11"></span><br></p>
-<p class="p2"><span class="s4"><span class="Apple-converted-space">        </span></span><span class="s1">#game-canvas</span><span class="s4"> {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">display:</span><span class="s1"> </span><span class="s8">block</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">border-radius:</span><span class="s1"> </span><span class="s10">4px</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p7"><span class="s11"></span><br></p>
-<p class="p2"><span class="s4"><span class="Apple-converted-space">        </span></span><span class="s1">#info-panel</span><span class="s4"> {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">min-width:</span><span class="s1"> </span><span class="s10">250px</span><span class="s1">;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s1">background-color:</span><span class="s4"> </span><span class="s8">#1F1F1F</span><span class="s4">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">padding:</span><span class="s1"> </span><span class="s10">24px</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">border-radius:</span><span class="s1"> </span><span class="s10">12px</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">box-shadow:</span><span class="s1"> </span><span class="s10">0</span><span class="s1"> </span><span class="s10">0</span><span class="s1"> </span><span class="s10">15px</span><span class="s1"> </span><span class="s8">rgba(</span><span class="s10">0</span><span class="s1">, </span><span class="s10">0</span><span class="s1">, </span><span class="s10">0</span><span class="s1">, </span><span class="s10">0.3</span><span class="s8">)</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">display:</span><span class="s1"> </span><span class="s8">flex</span><span class="s1">;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s1">flex-direction:</span><span class="s4"> </span><span class="s8">column</span><span class="s4">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">gap:</span><span class="s1"> </span><span class="s10">16px</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p7"><span class="s11"></span><br></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s6">.info-card</span><span class="s1"> {</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s1">background-color:</span><span class="s4"> </span><span class="s8">#2D2D2D</span><span class="s4">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">padding:</span><span class="s1"> </span><span class="s10">12px</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">border-radius:</span><span class="s1"> </span><span class="s10">8px</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">border-left:</span><span class="s1"> </span><span class="s10">5px</span><span class="s1"> </span><span class="s8">solid</span><span class="s1"> </span><span class="s8">#00FFD5</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">box-shadow:</span><span class="s1"> </span><span class="s10">0</span><span class="s1"> </span><span class="s10">4px</span><span class="s1"> </span><span class="s10">6px</span><span class="s1"> </span><span class="s8">rgba(</span><span class="s10">0</span><span class="s1">, </span><span class="s10">0</span><span class="s1">, </span><span class="s10">0</span><span class="s1">, </span><span class="s10">0.1</span><span class="s8">)</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p7"><span class="s11"></span><br></p>
-<p class="p2"><span class="s4"><span class="Apple-converted-space">        </span></span><span class="s1">.info-card</span><span class="s4"> </span><span class="s1">h3</span><span class="s4"> {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">font-weight:</span><span class="s1"> </span><span class="s10">700</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">color:</span><span class="s1"> </span><span class="s8">#00FFD5</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">margin-bottom:</span><span class="s1"> </span><span class="s10">4px</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">font-size:</span><span class="s1"> </span><span class="s10">0.9rem</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p7"><span class="s11"></span><br></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s6">.info-card</span><span class="s1"> </span><span class="s6">p</span><span class="s1"> {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">font-size:</span><span class="s1"> </span><span class="s10">1.5rem</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">color:</span><span class="s1"> </span><span class="s8">#FFFFFF</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p7"><span class="s11"></span><br></p>
-<p class="p8"><span class="s4"><span class="Apple-converted-space">        </span></span><span class="s1">/* Next Piece Display */</span></p>
-<p class="p2"><span class="s4"><span class="Apple-converted-space">        </span></span><span class="s1">#next-piece-display</span><span class="s4"> {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">display:</span><span class="s1"> </span><span class="s8">grid</span><span class="s1">;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s1">grid-template-columns:</span><span class="s4"> </span><span class="s8">repeat(</span><span class="s10">4</span><span class="s4">, </span><span class="s10">1fr</span><span class="s8">)</span><span class="s4">;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s1">grid-template-rows:</span><span class="s4"> </span><span class="s8">repeat(</span><span class="s10">4</span><span class="s4">, </span><span class="s10">1fr</span><span class="s8">)</span><span class="s4">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">gap:</span><span class="s1"> </span><span class="s10">1px</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">width:</span><span class="s1"> </span><span class="s10">80px</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">height:</span><span class="s1"> </span><span class="s10">80px</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">margin:</span><span class="s1"> </span><span class="s10">10px</span><span class="s1"> </span><span class="s8">auto</span><span class="s1">;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s1">background-color:</span><span class="s4"> </span><span class="s8">#000000</span><span class="s4">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">border:</span><span class="s1"> </span><span class="s10">2px</span><span class="s1"> </span><span class="s8">solid</span><span class="s1"> </span><span class="s8">#555</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">border-radius:</span><span class="s1"> </span><span class="s10">4px</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p2"><span class="s4"><span class="Apple-converted-space">        </span></span><span class="s1">.next-block</span><span class="s4"> {</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s1">background-color:</span><span class="s4"> </span><span class="s8">transparent</span><span class="s4">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p7"><span class="s11"></span><br></p>
-<p class="p8"><span class="s4"><span class="Apple-converted-space">        </span></span><span class="s1">/* Botones de control (ocultos en escritorio) */</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s6">.controls</span><span class="s1"> {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">display:</span><span class="s1"> </span><span class="s8">none</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">width:</span><span class="s1"> </span><span class="s10">100%</span><span class="s1">;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s1">justify-content:</span><span class="s4"> </span><span class="s8">center</span><span class="s4">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">margin-top:</span><span class="s1"> </span><span class="s10">20px</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">gap:</span><span class="s1"> </span><span class="s10">10px</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p7"><span class="s11"></span><br></p>
-<p class="p2"><span class="s4"><span class="Apple-converted-space">        </span></span><span class="s1">.control-btn</span><span class="s4"> {</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s1">background-color:</span><span class="s4"> </span><span class="s8">#00FFD5</span><span class="s4">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">color:</span><span class="s1"> </span><span class="s8">#121212</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">padding:</span><span class="s1"> </span><span class="s10">15px</span><span class="s1"> </span><span class="s10">20px</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">border:</span><span class="s1"> </span><span class="s8">none</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">border-radius:</span><span class="s1"> </span><span class="s10">8px</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">font-weight:</span><span class="s1"> </span><span class="s10">700</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">cursor:</span><span class="s1"> </span><span class="s8">pointer</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">box-shadow:</span><span class="s1"> </span><span class="s10">0</span><span class="s1"> </span><span class="s10">4px</span><span class="s1"> </span><span class="s10">0</span><span class="s1"> </span><span class="s8">#00A38B</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">transition:</span><span class="s1"> </span><span class="s8">all</span><span class="s1"> </span><span class="s10">0.1s</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">flex:</span><span class="s1"> </span><span class="s10">1</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">max-width:</span><span class="s1"> </span><span class="s10">150px</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p7"><span class="s11"></span><br></p>
-<p class="p2"><span class="s4"><span class="Apple-converted-space">        </span></span><span class="s1">.control-btn:active</span><span class="s4"> {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">box-shadow:</span><span class="s1"> </span><span class="s10">0</span><span class="s1"> </span><span class="s10">1px</span><span class="s1"> </span><span class="s10">0</span><span class="s1"> </span><span class="s8">#00A38B</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">transform:</span><span class="s1"> </span><span class="s8">translateY(</span><span class="s10">3px</span><span class="s8">)</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p7"><span class="s11"></span><br></p>
-<p class="p8"><span class="s4"><span class="Apple-converted-space">        </span></span><span class="s1">/* Estilos del Modal del Quiz */</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s6">.modal</span><span class="s1"> {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">position:</span><span class="s1"> </span><span class="s8">fixed</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">top:</span><span class="s1"> </span><span class="s10">0</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">left:</span><span class="s1"> </span><span class="s10">0</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">width:</span><span class="s1"> </span><span class="s10">100%</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">height:</span><span class="s1"> </span><span class="s10">100%</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">background-color:</span><span class="s1"> </span><span class="s8">rgba(</span><span class="s10">0</span><span class="s1">, </span><span class="s10">0</span><span class="s1">, </span><span class="s10">0</span><span class="s1">, </span><span class="s10">0.85</span><span class="s8">)</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">display:</span><span class="s1"> </span><span class="s8">flex</span><span class="s1">;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s1">justify-content:</span><span class="s4"> </span><span class="s8">center</span><span class="s4">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">align-items:</span><span class="s1"> </span><span class="s8">center</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">z-index:</span><span class="s1"> </span><span class="s10">1000</span><span class="s1">;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s1">backdrop-filter:</span><span class="s4"> </span><span class="s8">blur(</span><span class="s10">5px</span><span class="s8">)</span><span class="s4">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">opacity:</span><span class="s1"> </span><span class="s10">0</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">visibility:</span><span class="s1"> </span><span class="s8">hidden</span><span class="s1">;</span></p>
-<p class="p9"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s2">transition:</span><span class="s4"> </span><span class="s1">opacity</span><span class="s4"> </span><span class="s10">0.3s</span><span class="s4"> </span><span class="s1">ease</span><span class="s4">, </span><span class="s1">visibility</span><span class="s4"> </span><span class="s10">0.3s</span><span class="s4"> </span><span class="s1">ease</span><span class="s4">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p7"><span class="s11"></span><br></p>
-<p class="p2"><span class="s4"><span class="Apple-converted-space">        </span></span><span class="s1">.modal.active</span><span class="s4"> {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">opacity:</span><span class="s1"> </span><span class="s10">1</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">visibility:</span><span class="s1"> </span><span class="s8">visible</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p7"><span class="s11"></span><br></p>
-<p class="p2"><span class="s4"><span class="Apple-converted-space">        </span></span><span class="s1">.modal-content</span><span class="s4"> {</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s1">background-color:</span><span class="s4"> </span><span class="s8">#1F1F1F</span><span class="s4">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">padding:</span><span class="s1"> </span><span class="s10">30px</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">border-radius:</span><span class="s1"> </span><span class="s10">15px</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">max-width:</span><span class="s1"> </span><span class="s10">500px</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">width:</span><span class="s1"> </span><span class="s10">90%</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">text-align:</span><span class="s1"> </span><span class="s8">center</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">box-shadow:</span><span class="s1"> </span><span class="s10">0</span><span class="s1"> </span><span class="s10">0</span><span class="s1"> </span><span class="s10">30px</span><span class="s1"> </span><span class="s8">rgba(</span><span class="s10">0</span><span class="s1">, </span><span class="s10">255</span><span class="s1">, </span><span class="s10">255</span><span class="s1">, </span><span class="s10">0.7</span><span class="s8">)</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">transform:</span><span class="s1"> </span><span class="s8">scale(</span><span class="s10">0.9</span><span class="s8">)</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">transition:</span><span class="s1"> </span><span class="s8">transform</span><span class="s1"> </span><span class="s10">0.3s</span><span class="s1"> </span><span class="s8">ease</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p7"><span class="s11"></span><br></p>
-<p class="p2"><span class="s4"><span class="Apple-converted-space">        </span></span><span class="s1">.modal.active</span><span class="s4"> </span><span class="s1">.modal-content</span><span class="s4"> {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">transform:</span><span class="s1"> </span><span class="s8">scale(</span><span class="s10">1</span><span class="s8">)</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p7"><span class="s11"></span><br></p>
-<p class="p2"><span class="s4"><span class="Apple-converted-space">        </span></span><span class="s1">.modal-content</span><span class="s4"> </span><span class="s1">h2</span><span class="s4"> {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">font-size:</span><span class="s1"> </span><span class="s10">1.8rem</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">color:</span><span class="s1"> </span><span class="s8">#FFD500</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">margin-bottom:</span><span class="s1"> </span><span class="s10">20px</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">text-shadow:</span><span class="s1"> </span><span class="s10">1px</span><span class="s1"> </span><span class="s10">1px</span><span class="s1"> </span><span class="s10">5px</span><span class="s1"> </span><span class="s8">rgba(</span><span class="s10">255</span><span class="s1">, </span><span class="s10">213</span><span class="s1">, </span><span class="s10">0</span><span class="s1">, </span><span class="s10">0.5</span><span class="s8">)</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p7"><span class="s11"></span><br></p>
-<p class="p2"><span class="s4"><span class="Apple-converted-space">        </span></span><span class="s1">.modal-content</span><span class="s4"> </span><span class="s1">p</span><span class="s4"> {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">font-size:</span><span class="s1"> </span><span class="s10">1.1rem</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">margin-bottom:</span><span class="s1"> </span><span class="s10">25px</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">line-height:</span><span class="s1"> </span><span class="s10">1.4</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p7"><span class="s11"></span><br></p>
-<p class="p2"><span class="s4"><span class="Apple-converted-space">        </span></span><span class="s1">.option-btn</span><span class="s4"> {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">display:</span><span class="s1"> </span><span class="s8">block</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">width:</span><span class="s1"> </span><span class="s10">100%</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">padding:</span><span class="s1"> </span><span class="s10">15px</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">margin-bottom:</span><span class="s1"> </span><span class="s10">10px</span><span class="s1">;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s1">background-color:</span><span class="s4"> </span><span class="s8">#3A3A3A</span><span class="s4">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">color:</span><span class="s1"> </span><span class="s8">#FFFFFF</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">border:</span><span class="s1"> </span><span class="s10">2px</span><span class="s1"> </span><span class="s8">solid</span><span class="s1"> </span><span class="s8">#555</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">border-radius:</span><span class="s1"> </span><span class="s10">8px</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">cursor:</span><span class="s1"> </span><span class="s8">pointer</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">font-size:</span><span class="s1"> </span><span class="s10">1rem</span><span class="s1">;</span></p>
-<p class="p9"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s2">transition:</span><span class="s4"> </span><span class="s1">background-color</span><span class="s4"> </span><span class="s10">0.15s</span><span class="s4">, </span><span class="s1">border-color</span><span class="s4"> </span><span class="s10">0.15s</span><span class="s4">, </span><span class="s1">transform</span><span class="s4"> </span><span class="s10">0.1s</span><span class="s4">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p7"><span class="s11"></span><br></p>
-<p class="p2"><span class="s4"><span class="Apple-converted-space">        </span></span><span class="s1">.option-btn:hover</span><span class="s4"> {</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s1">background-color:</span><span class="s4"> </span><span class="s8">#555</span><span class="s4">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">border-color:</span><span class="s1"> </span><span class="s8">#00FFD5</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p7"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
-<p class="p2"><span class="s4"><span class="Apple-converted-space">        </span></span><span class="s1">.option-btn.selected</span><span class="s4"> {</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s1">background-color:</span><span class="s4"> </span><span class="s8">#00FFD5</span><span class="s4">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">color:</span><span class="s1"> </span><span class="s8">#121212</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">font-weight:</span><span class="s1"> </span><span class="s10">700</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">border-color:</span><span class="s1"> </span><span class="s8">#00FFD5</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p7"><span class="s11"></span><br></p>
-<p class="p2"><span class="s4"><span class="Apple-converted-space">        </span></span><span class="s1">.quiz-submit-btn</span><span class="s4"> {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">margin-top:</span><span class="s1"> </span><span class="s10">20px</span><span class="s1">;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s1">background-color:</span><span class="s4"> </span><span class="s8">#FFD500</span><span class="s4">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">color:</span><span class="s1"> </span><span class="s8">#121212</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">padding:</span><span class="s1"> </span><span class="s10">15px</span><span class="s1"> </span><span class="s10">30px</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">font-weight:</span><span class="s1"> </span><span class="s10">700</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">border-radius:</span><span class="s1"> </span><span class="s10">8px</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">box-shadow:</span><span class="s1"> </span><span class="s10">0</span><span class="s1"> </span><span class="s10">4px</span><span class="s1"> </span><span class="s10">0</span><span class="s1"> </span><span class="s8">#CCAA00</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p7"><span class="s11"></span><br></p>
-<p class="p2"><span class="s4"><span class="Apple-converted-space">        </span></span><span class="s1">.quiz-submit-btn:active</span><span class="s4"> {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">box-shadow:</span><span class="s1"> </span><span class="s10">0</span><span class="s1"> </span><span class="s10">1px</span><span class="s1"> </span><span class="s10">0</span><span class="s1"> </span><span class="s8">#CCAA00</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">transform:</span><span class="s1"> </span><span class="s8">translateY(</span><span class="s10">3px</span><span class="s8">)</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p7"><span class="s11"></span><br></p>
-<p class="p8"><span class="s4"><span class="Apple-converted-space">        </span></span><span class="s1">/* Media Queries para responsividad */</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>@</span><span class="s6">media</span><span class="s1"> (</span><span class="s6">max-width:</span><span class="s1"> 768</span><span class="s6">px</span><span class="s1">) {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>#game-container {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s2">flex-direction:</span><span class="s1"> </span><span class="s8">column</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s2">align-items:</span><span class="s1"> </span><span class="s8">center</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>}</span></p>
-<p class="p7"><span class="s11"></span><br></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s6">#info-panel</span><span class="s1"> {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s2">width:</span><span class="s1"> </span><span class="s10">100%</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s2">max-width:</span><span class="s1"> </span><span class="s10">400px</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s2">order:</span><span class="s1"> </span><span class="s10">-1</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>}</span></p>
-<p class="p7"><span class="s11"></span><br></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s6">.controls</span><span class="s1"> {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s2">display:</span><span class="s1"> </span><span class="s8">flex</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>}</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p2"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;/</span><span class="s1">style</span><span class="s3">&gt;</span></p>
-<p class="p2"><span class="s3">&lt;/</span><span class="s1">head</span><span class="s3">&gt;</span></p>
-<p class="p2"><span class="s3">&lt;</span><span class="s1">body</span><span class="s3">&gt;</span></p>
-<p class="p7"><span class="s11"></span><br></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s4"> </span><span class="s2">id</span><span class="s3">=</span><span class="s1">"game-container"</span><span class="s3">&gt;</span></p>
-<p class="p7"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
-<p class="p8"><span class="s4"><span class="Apple-converted-space">        </span></span><span class="s1">&lt;!-- Panel de Información --&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">        </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s4"> </span><span class="s2">id</span><span class="s3">=</span><span class="s1">"info-panel"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;</span><span class="s6">h1</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"text-2xl text-center font-bold text-teal-400 mb-4"</span><span class="s3">&gt;</span><span class="s4">Armonía Bloqueada</span><span class="s3">&lt;/</span><span class="s6">h1</span><span class="s3">&gt;</span></p>
-<p class="p7"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s1"> </span><span class="s2">class</span><span class="s3">=</span><span class="s5">"info-card"</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;</span><span class="s6">h3</span><span class="s3">&gt;</span><span class="s1">Puntuación</span><span class="s3">&lt;/</span><span class="s6">h3</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;</span><span class="s6">p</span><span class="s1"> </span><span class="s2">id</span><span class="s3">=</span><span class="s5">"score"</span><span class="s3">&gt;</span><span class="s1">0</span><span class="s3">&lt;/</span><span class="s6">p</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p7"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s1"> </span><span class="s2">class</span><span class="s3">=</span><span class="s5">"info-card"</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;</span><span class="s6">h3</span><span class="s3">&gt;</span><span class="s1">Líneas</span><span class="s3">&lt;/</span><span class="s6">h3</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;</span><span class="s6">p</span><span class="s1"> </span><span class="s2">id</span><span class="s3">=</span><span class="s5">"lines"</span><span class="s3">&gt;</span><span class="s1">0</span><span class="s3">&lt;/</span><span class="s6">p</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p7"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s1"> </span><span class="s2">class</span><span class="s3">=</span><span class="s5">"info-card"</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;</span><span class="s6">h3</span><span class="s3">&gt;</span><span class="s1">Desafío de Tensión</span><span class="s3">&lt;/</span><span class="s6">h3</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;</span><span class="s6">p</span><span class="s1"> </span><span class="s2">id</span><span class="s3">=</span><span class="s5">"challenge-progress"</span><span class="s3">&gt;</span><span class="s1">0 / 500</span><span class="s3">&lt;/</span><span class="s6">p</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p7"><span class="s11"></span><br></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s1"> </span><span class="s2">class</span><span class="s3">=</span><span class="s5">"info-card"</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;</span><span class="s6">h3</span><span class="s3">&gt;</span><span class="s1">Siguiente Pieza</span><span class="s3">&lt;/</span><span class="s6">h3</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s4"> </span><span class="s2">id</span><span class="s3">=</span><span class="s1">"next-piece-display"</span><span class="s3">&gt;&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p7"><span class="s11"></span><br></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;</span><span class="s6">button</span><span class="s4"> </span><span class="s2">id</span><span class="s3">=</span><span class="s1">"start-button"</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"mt-4 bg-lime-500 hover:bg-lime-600 text-black font-bold py-3 px-6 rounded-lg transition duration-200"</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>INICIAR JUEGO (ENTER)</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;/</span><span class="s6">button</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p7"><span class="s11"></span><br></p>
-<p class="p8"><span class="s4"><span class="Apple-converted-space">        </span></span><span class="s1">&lt;!-- Área de Juego --&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">        </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s4"> </span><span class="s2">id</span><span class="s3">=</span><span class="s1">"canvas-wrapper"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;</span><span class="s6">canvas</span><span class="s4"> </span><span class="s2">id</span><span class="s3">=</span><span class="s1">"game-canvas"</span><span class="s4"> </span><span class="s2">width</span><span class="s3">=</span><span class="s1">"300"</span><span class="s4"> </span><span class="s2">height</span><span class="s3">=</span><span class="s1">"600"</span><span class="s3">&gt;&lt;/</span><span class="s6">canvas</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p7"><span class="s11"></span><br></p>
-<p class="p8"><span class="s4"><span class="Apple-converted-space">        </span></span><span class="s1">&lt;!-- Controles Móviles --&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">        </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"controls md:hidden"</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;</span><span class="s6">button</span><span class="s1"> </span><span class="s2">class</span><span class="s3">=</span><span class="s5">"control-btn"</span><span class="s1"> </span><span class="s2">data-action</span><span class="s3">=</span><span class="s5">"left"</span><span class="s3">&gt;</span><span class="s1">Izquierda</span><span class="s3">&lt;/</span><span class="s6">button</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;</span><span class="s6">button</span><span class="s1"> </span><span class="s2">class</span><span class="s3">=</span><span class="s5">"control-btn"</span><span class="s1"> </span><span class="s2">data-action</span><span class="s3">=</span><span class="s5">"down"</span><span class="s3">&gt;</span><span class="s1">Abajo</span><span class="s3">&lt;/</span><span class="s6">button</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;</span><span class="s6">button</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"control-btn"</span><span class="s4"> </span><span class="s2">data-action</span><span class="s3">=</span><span class="s1">"rotate"</span><span class="s3">&gt;</span><span class="s4">Rotar</span><span class="s3">&lt;/</span><span class="s6">button</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;</span><span class="s6">button</span><span class="s1"> </span><span class="s2">class</span><span class="s3">=</span><span class="s5">"control-btn"</span><span class="s1"> </span><span class="s2">data-action</span><span class="s3">=</span><span class="s5">"right"</span><span class="s3">&gt;</span><span class="s1">Derecha</span><span class="s3">&lt;/</span><span class="s6">button</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p7"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p7"><span class="s11"></span><br></p>
-<p class="p8"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s1">&lt;!-- Modal del Desafío de Tensión (Quiz) --&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s4"> </span><span class="s2">id</span><span class="s3">=</span><span class="s1">"quiz-modal"</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"modal"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">        </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"modal-content"</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;</span><span class="s6">h2</span><span class="s3">&gt;</span><span class="s1">¡DESAFÍO DE TENSIÓN!</span><span class="s3">&lt;/</span><span class="s6">h2</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;</span><span class="s6">p</span><span class="s4"> </span><span class="s2">id</span><span class="s3">=</span><span class="s1">"quiz-question"</span><span class="s3">&gt;&lt;/</span><span class="s6">p</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s4"> </span><span class="s2">id</span><span class="s3">=</span><span class="s1">"quiz-options"</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"mb-4"</span><span class="s3">&gt;</span></p>
-<p class="p8"><span class="s4"><span class="Apple-converted-space">                </span></span><span class="s1">&lt;!-- Opciones se inyectan aquí --&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;</span><span class="s6">button</span><span class="s4"> </span><span class="s2">id</span><span class="s3">=</span><span class="s1">"quiz-submit"</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"quiz-submit-btn hover:bg-yellow-400"</span><span class="s3">&gt;</span><span class="s4">RESPONDER</span><span class="s3">&lt;/</span><span class="s6">button</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p7"><span class="s11"></span><br></p>
-<p class="p2"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s1">script</span><span class="s3">&gt;</span></p>
-<p class="p8"><span class="s4"><span class="Apple-converted-space">        </span></span><span class="s1">// --- CONSTANTES DEL JUEGO ---</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s7">const</span><span class="s1"> </span><span class="s12">COLS</span><span class="s1"> = </span><span class="s13">10</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s7">const</span><span class="s1"> </span><span class="s12">ROWS</span><span class="s1"> = </span><span class="s13">20</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s7">const</span><span class="s1"> </span><span class="s12">BLOCK_SIZE</span><span class="s1"> = </span><span class="s13">30</span><span class="s1">;</span></p>
-<p class="p10"><span class="s4"><span class="Apple-converted-space">        </span></span><span class="s7">const</span><span class="s4"> </span><span class="s1">BOARD_WIDTH</span><span class="s4"> = </span><span class="s1">COLS</span><span class="s4"> * </span><span class="s1">BLOCK_SIZE</span><span class="s4">;</span></p>
-<p class="p10"><span class="s4"><span class="Apple-converted-space">        </span></span><span class="s7">const</span><span class="s4"> </span><span class="s1">BOARD_HEIGHT</span><span class="s4"> = </span><span class="s1">ROWS</span><span class="s4"> * </span><span class="s1">BLOCK_SIZE</span><span class="s4">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s7">const</span><span class="s1"> </span><span class="s12">INITIAL_SPEED</span><span class="s1"> = </span><span class="s13">1000</span><span class="s1">; </span><span class="s14">// ms</span></p>
-<p class="p7"><span class="s11"></span><br></p>
-<p class="p8"><span class="s4"><span class="Apple-converted-space">        </span></span><span class="s1">// --- SETUP CANVAS ---</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s7">const</span><span class="s1"> canvas = document.getElementById(</span><span class="s9">'game-canvas'</span><span class="s1">);</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s7">const</span><span class="s1"> ctx = canvas.getContext(</span><span class="s9">'2d'</span><span class="s1">);</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>canvas.width = </span><span class="s12">BOARD_WIDTH</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>canvas.height = </span><span class="s12">BOARD_HEIGHT</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>ctx.scale(</span><span class="s13">1</span><span class="s1">, </span><span class="s13">1</span><span class="s1">);</span></p>
-<p class="p7"><span class="s11"></span><br></p>
-<p class="p8"><span class="s4"><span class="Apple-converted-space">        </span></span><span class="s1">// --- ESTADO DEL JUEGO ---</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s7">let</span><span class="s1"> board = </span><span class="s12">Array</span><span class="s1">(</span><span class="s12">ROWS</span><span class="s1">).fill(</span><span class="s7">null</span><span class="s1">).map(() =&gt; </span><span class="s12">Array</span><span class="s1">(</span><span class="s12">COLS</span><span class="s1">).fill(</span><span class="s13">0</span><span class="s1">)); </span><span class="s14">// 0: vacío</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s7">let</span><span class="s1"> currentPiece = </span><span class="s7">null</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s7">let</span><span class="s1"> nextPiece = </span><span class="s7">null</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s7">let</span><span class="s1"> score = </span><span class="s13">0</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s7">let</span><span class="s1"> lines = </span><span class="s13">0</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s7">let</span><span class="s1"> isPlaying = </span><span class="s7">false</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s7">let</span><span class="s1"> dropCounter = </span><span class="s13">0</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s7">let</span><span class="s1"> dropInterval = </span><span class="s12">INITIAL_SPEED</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s7">let</span><span class="s1"> lastTime = </span><span class="s13">0</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s7">let</span><span class="s1"> challengeGoal = </span><span class="s13">500</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s7">let</span><span class="s1"> isQuizActive = </span><span class="s7">false</span><span class="s1">;</span></p>
-<p class="p7"><span class="s11"></span><br></p>
-<p class="p8"><span class="s4"><span class="Apple-converted-space">        </span></span><span class="s1">// --- ELEMENTOS DEL DOM ---</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s7">const</span><span class="s1"> scoreElement = document.getElementById(</span><span class="s9">'score'</span><span class="s1">);</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s7">const</span><span class="s1"> linesElement = document.getElementById(</span><span class="s9">'lines'</span><span class="s1">);</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s7">const</span><span class="s1"> challengeProgressElement = document.getElementById(</span><span class="s9">'challenge-progress'</span><span class="s1">);</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s7">const</span><span class="s1"> startButton = document.getElementById(</span><span class="s9">'start-button'</span><span class="s1">);</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s7">const</span><span class="s1"> nextPieceDisplay = document.getElementById(</span><span class="s9">'next-piece-display'</span><span class="s1">);</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s7">const</span><span class="s1"> quizModal = document.getElementById(</span><span class="s9">'quiz-modal'</span><span class="s1">);</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s7">const</span><span class="s1"> quizQuestionElement = document.getElementById(</span><span class="s9">'quiz-question'</span><span class="s1">);</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s7">const</span><span class="s1"> quizOptionsElement = document.getElementById(</span><span class="s9">'quiz-options'</span><span class="s1">);</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s7">const</span><span class="s1"> quizSubmitButton = document.getElementById(</span><span class="s9">'quiz-submit'</span><span class="s1">);</span></p>
-<p class="p7"><span class="s11"></span><br></p>
-<p class="p8"><span class="s4"><span class="Apple-converted-space">        </span></span><span class="s1">// --- DEFINICIÓN DE PIEZAS Y COLORES (Basado en el círculo de quintas para un toque musical) ---</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s7">const</span><span class="s1"> </span><span class="s12">PIECES</span><span class="s1"> = [</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s14">// I (Do)</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>[[</span><span class="s13">0</span><span class="s1">, </span><span class="s13">0</span><span class="s1">, </span><span class="s13">0</span><span class="s1">, </span><span class="s13">0</span><span class="s1">], [</span><span class="s13">1</span><span class="s1">, </span><span class="s13">1</span><span class="s1">, </span><span class="s13">1</span><span class="s1">, </span><span class="s13">1</span><span class="s1">], [</span><span class="s13">0</span><span class="s1">, </span><span class="s13">0</span><span class="s1">, </span><span class="s13">0</span><span class="s1">, </span><span class="s13">0</span><span class="s1">], [</span><span class="s13">0</span><span class="s1">, </span><span class="s13">0</span><span class="s1">, </span><span class="s13">0</span><span class="s1">, </span><span class="s13">0</span><span class="s1">]],</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s14">// J (Sol)</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>[[</span><span class="s13">2</span><span class="s1">, </span><span class="s13">0</span><span class="s1">, </span><span class="s13">0</span><span class="s1">], [</span><span class="s13">2</span><span class="s1">, </span><span class="s13">2</span><span class="s1">, </span><span class="s13">2</span><span class="s1">], [</span><span class="s13">0</span><span class="s1">, </span><span class="s13">0</span><span class="s1">, </span><span class="s13">0</span><span class="s1">]],</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s14">// L (Re)</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>[[</span><span class="s13">0</span><span class="s1">, </span><span class="s13">0</span><span class="s1">, </span><span class="s13">3</span><span class="s1">], [</span><span class="s13">3</span><span class="s1">, </span><span class="s13">3</span><span class="s1">, </span><span class="s13">3</span><span class="s1">], [</span><span class="s13">0</span><span class="s1">, </span><span class="s13">0</span><span class="s1">, </span><span class="s13">0</span><span class="s1">]],</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s14">// O (La)</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>[[</span><span class="s13">4</span><span class="s1">, </span><span class="s13">4</span><span class="s1">], [</span><span class="s13">4</span><span class="s1">, </span><span class="s13">4</span><span class="s1">]],</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s14">// S (Mi)</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>[[</span><span class="s13">0</span><span class="s1">, </span><span class="s13">5</span><span class="s1">, </span><span class="s13">5</span><span class="s1">], [</span><span class="s13">5</span><span class="s1">, </span><span class="s13">5</span><span class="s1">, </span><span class="s13">0</span><span class="s1">], [</span><span class="s13">0</span><span class="s1">, </span><span class="s13">0</span><span class="s1">, </span><span class="s13">0</span><span class="s1">]],</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s14">// T (Si)</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>[[</span><span class="s13">0</span><span class="s1">, </span><span class="s13">6</span><span class="s1">, </span><span class="s13">0</span><span class="s1">], [</span><span class="s13">6</span><span class="s1">, </span><span class="s13">6</span><span class="s1">, </span><span class="s13">6</span><span class="s1">], [</span><span class="s13">0</span><span class="s1">, </span><span class="s13">0</span><span class="s1">, </span><span class="s13">0</span><span class="s1">]],</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s14">// Z (Fa)</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>[[</span><span class="s13">7</span><span class="s1">, </span><span class="s13">7</span><span class="s1">, </span><span class="s13">0</span><span class="s1">], [</span><span class="s13">0</span><span class="s1">, </span><span class="s13">7</span><span class="s1">, </span><span class="s13">7</span><span class="s1">], [</span><span class="s13">0</span><span class="s1">, </span><span class="s13">0</span><span class="s1">, </span><span class="s13">0</span><span class="s1">]]</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>];</span></p>
-<p class="p7"><span class="s11"></span><br></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s7">const</span><span class="s1"> </span><span class="s12">COLORS</span><span class="s1"> = [</span></p>
-<p class="p8"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s9">'#000000'</span><span class="s4">, </span><span class="s1">// 0: Fondo (Negro)</span></p>
-<p class="p8"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s9">'#00FFFF'</span><span class="s4">, </span><span class="s1">// 1: I - Cyan (Do)</span></p>
-<p class="p8"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s9">'#0000FF'</span><span class="s4">, </span><span class="s1">// 2: J - Azul (Sol)</span></p>
-<p class="p8"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s9">'#FF7F00'</span><span class="s4">, </span><span class="s1">// 3: L - Naranja (Re)</span></p>
-<p class="p8"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s9">'#FFFF00'</span><span class="s4">, </span><span class="s1">// 4: O - Amarillo (La)</span></p>
-<p class="p8"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s9">'#00FF00'</span><span class="s4">, </span><span class="s1">// 5: S - Verde (Mi)</span></p>
-<p class="p8"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s9">'#800080'</span><span class="s4">, </span><span class="s1">// 6: T - Púrpura (Si)</span></p>
-<p class="p8"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s9">'#FF0000'</span><span class="s4"><span class="Apple-converted-space">  </span></span><span class="s1">// 7: Z - Rojo (Fa)</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>];</span></p>
-<p class="p7"><span class="s11"></span><br></p>
-<p class="p8"><span class="s4"><span class="Apple-converted-space">        </span></span><span class="s1">// --- BANCO DE PREGUNTAS (Tensiones de Acordes) ---</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s7">const</span><span class="s1"> </span><span class="s12">QUIZ_BANK</span><span class="s1"> = [</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>{</span></p>
-<p class="p6"><span class="s4"><span class="Apple-converted-space">                </span>question: </span><span class="s1">"¿Cuál es la tensión más común disponible en un acorde **Major 7** (Maj7), como Cmaj7?"</span><span class="s4">,</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>options: [</span><span class="s9">"b9"</span><span class="s1">, </span><span class="s9">"9"</span><span class="s1">, </span><span class="s9">"#11"</span><span class="s1">, </span><span class="s9">"b13"</span><span class="s1">],</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>answer: </span><span class="s9">"9"</span><span class="s1">,</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>bonus: </span><span class="s13">600</span><span class="s1">,</span></p>
-<p class="p6"><span class="s4"><span class="Apple-converted-space">                </span>feedback: </span><span class="s1">"¡Correcto! La 9ª es la tensión por defecto que mejor suena en un acorde Maj7."</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>},</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>{</span></p>
-<p class="p6"><span class="s4"><span class="Apple-converted-space">                </span>question: </span><span class="s1">"¿Qué tensión **debe evitarse** (avoid note) en un acorde **Dominante 7** (V7) si no está alterado?"</span><span class="s4">,</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>options: [</span><span class="s9">"9"</span><span class="s1">, </span><span class="s9">"13"</span><span class="s1">, </span><span class="s9">"#11"</span><span class="s1">, </span><span class="s9">"b9"</span><span class="s1">],</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>answer: </span><span class="s9">"#11"</span><span class="s1">,</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>bonus: </span><span class="s13">800</span><span class="s1">,</span></p>
-<p class="p6"><span class="s4"><span class="Apple-converted-space">                </span>feedback: </span><span class="s1">"¡Genial! La #11 no se evita en un dominante 7, pero la 4ª (unísono con la 11ª) sí que es la avoid note más común si no está alterado."</span><span class="s4"> </span><span class="s14">// Simplificando para el contexto Tetris: la #11 está asociada a Dominante Lydian.</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>},</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>{</span></p>
-<p class="p6"><span class="s4"><span class="Apple-converted-space">                </span>question: </span><span class="s1">"En un acorde **Dominante Alterado** (por ejemplo, G7alt), ¿cuál de estas tensiones es **imprescindible** para darle su sonido 'alterado'?"</span><span class="s4">,</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>options: [</span><span class="s9">"9"</span><span class="s1">, </span><span class="s9">"b9"</span><span class="s1">, </span><span class="s9">"13"</span><span class="s1">, </span><span class="s9">"11"</span><span class="s1">],</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>answer: </span><span class="s9">"b9"</span><span class="s1">,</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>bonus: </span><span class="s13">1000</span><span class="s1">,</span></p>
-<p class="p6"><span class="s4"><span class="Apple-converted-space">                </span>feedback: </span><span class="s1">"¡Excelente! Un dominante alterado suele incluir b9, #9, b5 o #5 (b13 o #11) para crear la máxima tensión."</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>},</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>{</span></p>
-<p class="p6"><span class="s4"><span class="Apple-converted-space">                </span>question: </span><span class="s1">"¿Cuál es la tensión por excelencia que distingue a un acorde **Menor 7** (min7) de un acorde **Menor 6** (min6)?"</span><span class="s4">,</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>options: [</span><span class="s9">"b9"</span><span class="s1">, </span><span class="s9">"11"</span><span class="s1">, </span><span class="s9">"13"</span><span class="s1">, </span><span class="s9">"b13"</span><span class="s1">],</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>answer: </span><span class="s9">"11"</span><span class="s1">,</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>bonus: </span><span class="s13">600</span><span class="s1">,</span></p>
-<p class="p6"><span class="s4"><span class="Apple-converted-space">                </span>feedback: </span><span class="s1">"¡Así es! La 11ª (perfecta) es la tensión por defecto para los acordes Min7 (aunque a menudo se omite la 9ª)."</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>},</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>{</span></p>
-<p class="p6"><span class="s4"><span class="Apple-converted-space">                </span>question: </span><span class="s1">"Si utilizas la escala **Lydian Dominant** sobre un acorde V7, ¿qué tensión peculiar estás introduciendo?"</span><span class="s4">,</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>options: [</span><span class="s9">"b9"</span><span class="s1">, </span><span class="s9">"#9"</span><span class="s1">, </span><span class="s9">"#11"</span><span class="s1">, </span><span class="s9">"b13"</span><span class="s1">],</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>answer: </span><span class="s9">"#11"</span><span class="s1">,</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>bonus: </span><span class="s13">1200</span><span class="s1">,</span></p>
-<p class="p6"><span class="s4"><span class="Apple-converted-space">                </span>feedback: </span><span class="s1">"¡Perfecto! El #11 es la nota característica del modo Lydian, que crea una dominante muy brillante."</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>}</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>];</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s7">let</span><span class="s1"> availableQuizzes = [...</span><span class="s12">QUIZ_BANK</span><span class="s1">];</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s7">let</span><span class="s1"> currentQuiz = </span><span class="s7">null</span><span class="s1">;</span></p>
-<p class="p7"><span class="s11"></span><br></p>
-<p class="p8"><span class="s4"><span class="Apple-converted-space">        </span></span><span class="s1">// --- FUNCIONES DE UTILIDAD ---</span></p>
-<p class="p7"><span class="s11"></span><br></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s7">function</span><span class="s1"> getRandomPiece() {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s7">const</span><span class="s1"> index = </span><span class="s12">Math</span><span class="s1">.floor(</span><span class="s12">Math</span><span class="s1">.random() * </span><span class="s12">PIECES</span><span class="s1">.length);</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s7">const</span><span class="s1"> matrix = </span><span class="s12">PIECES</span><span class="s1">[index];</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s7">const</span><span class="s1"> color = </span><span class="s12">COLORS</span><span class="s1">[index + </span><span class="s13">1</span><span class="s1">];</span></p>
-<p class="p7"><span class="s11"></span><br></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s7">return</span><span class="s1"> {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>matrix,</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>pos: { x: </span><span class="s12">Math</span><span class="s1">.floor(</span><span class="s12">COLS</span><span class="s1"> / </span><span class="s13">2</span><span class="s1">) - </span><span class="s12">Math</span><span class="s1">.floor(matrix[</span><span class="s13">0</span><span class="s1">].length / </span><span class="s13">2</span><span class="s1">), y: </span><span class="s13">0</span><span class="s1"> },</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>color: color</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>};</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p7"><span class="s11"></span><br></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s7">function</span><span class="s1"> createEmptyBoard() {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s7">return</span><span class="s1"> </span><span class="s12">Array</span><span class="s1">(</span><span class="s12">ROWS</span><span class="s1">).fill(</span><span class="s7">null</span><span class="s1">).map(() =&gt; </span><span class="s12">Array</span><span class="s1">(</span><span class="s12">COLS</span><span class="s1">).fill(</span><span class="s13">0</span><span class="s1">));</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p7"><span class="s11"></span><br></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s7">function</span><span class="s1"> drawBlock(x, y, color) {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>ctx.fillStyle = color;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>ctx.fillRect(x * </span><span class="s12">BLOCK_SIZE</span><span class="s1">, y * </span><span class="s12">BLOCK_SIZE</span><span class="s1">, </span><span class="s12">BLOCK_SIZE</span><span class="s1">, </span><span class="s12">BLOCK_SIZE</span><span class="s1">);</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>ctx.strokeStyle = </span><span class="s9">'#222'</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>ctx.strokeRect(x * </span><span class="s12">BLOCK_SIZE</span><span class="s1">, y * </span><span class="s12">BLOCK_SIZE</span><span class="s1">, </span><span class="s12">BLOCK_SIZE</span><span class="s1">, </span><span class="s12">BLOCK_SIZE</span><span class="s1">);</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p7"><span class="s11"></span><br></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s7">function</span><span class="s1"> drawBoard() {</span></p>
-<p class="p8"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s1">// Dibuja el tablero fijo</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s7">for</span><span class="s1"> (</span><span class="s7">let</span><span class="s1"> y = </span><span class="s13">0</span><span class="s1">; y &lt; </span><span class="s12">ROWS</span><span class="s1">; y++) {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s7">for</span><span class="s1"> (</span><span class="s7">let</span><span class="s1"> x = </span><span class="s13">0</span><span class="s1">; x &lt; </span><span class="s12">COLS</span><span class="s1">; x++) {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span></span><span class="s7">if</span><span class="s1"> (board[y][x]) {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>drawBlock(x, y, </span><span class="s12">COLORS</span><span class="s1">[board[y][x]]);</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>} </span><span class="s7">else</span><span class="s1"> {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span></span><span class="s14">// Fondo del bloque</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>ctx.fillStyle = </span><span class="s9">'#111'</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>ctx.fillRect(x * </span><span class="s12">BLOCK_SIZE</span><span class="s1">, y * </span><span class="s12">BLOCK_SIZE</span><span class="s1">, </span><span class="s12">BLOCK_SIZE</span><span class="s1">, </span><span class="s12">BLOCK_SIZE</span><span class="s1">);</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>}</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>}</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>}</span></p>
-<p class="p7"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
-<p class="p8"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s1">// Dibuja la pieza actual</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s7">if</span><span class="s1"> (currentPiece) {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>drawMatrix(currentPiece.matrix, currentPiece.pos);</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>}</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p7"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s7">function</span><span class="s1"> drawMatrix(matrix, offset) {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>matrix.forEach((row, y) =&gt; {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>row.forEach((value, x) =&gt; {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span></span><span class="s7">if</span><span class="s1"> (value) {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>drawBlock(x + offset.x, y + offset.y, currentPiece.color);</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>}</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>});</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>});</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p7"><span class="s11"></span><br></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s7">function</span><span class="s1"> drawNextPiece() {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>nextPieceDisplay.innerHTML = </span><span class="s9">''</span><span class="s1">;</span></p>
-<p class="p7"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s7">if</span><span class="s1"> (!nextPiece) </span><span class="s7">return</span><span class="s1">;</span></p>
-<p class="p7"><span class="s11"></span><br></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>nextPiece.matrix.forEach((row, y) =&gt; {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>row.forEach((value, x) =&gt; {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span></span><span class="s7">const</span><span class="s1"> block = document.createElement(</span><span class="s9">'div'</span><span class="s1">);</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>block.classList.add(</span><span class="s9">'next-block'</span><span class="s1">);</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span></span><span class="s7">if</span><span class="s1"> (value) {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>block.style.backgroundColor = nextPiece.color;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>block.style.border = </span><span class="s9">'1px solid #000'</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>block.style.borderRadius = </span><span class="s9">'2px'</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>}</span></p>
-<p class="p8"><span class="s4"><span class="Apple-converted-space">                    </span></span><span class="s1">// Posiciona correctamente en el grid 4x4</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>block.style.gridRow = y + </span><span class="s13">1</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>block.style.gridColumn = x + </span><span class="s13">1</span><span class="s1">;</span></p>
-<p class="p7"><span class="s11"></span><br></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>nextPieceDisplay.appendChild(block);</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>});</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>});</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p7"><span class="s11"></span><br></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s7">function</span><span class="s1"> collide(board, piece) {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s7">const</span><span class="s1"> m = piece.matrix;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s7">const</span><span class="s1"> o = piece.pos;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s7">for</span><span class="s1"> (</span><span class="s7">let</span><span class="s1"> y = </span><span class="s13">0</span><span class="s1">; y &lt; m.length; y++) {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s7">for</span><span class="s1"> (</span><span class="s7">let</span><span class="s1"> x = </span><span class="s13">0</span><span class="s1">; x &lt; m[y].length; x++) {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span></span><span class="s7">if</span><span class="s1"> (m[y][x] !== </span><span class="s13">0</span><span class="s1"> &amp;&amp; (board[y + o.y] &amp;&amp; board[y + o.y][x + o.x]) !== </span><span class="s13">0</span><span class="s1">) {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span></span><span class="s7">return</span><span class="s1"> </span><span class="s7">true</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>}</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span></span><span class="s7">if</span><span class="s1"> (m[y][x] !== </span><span class="s13">0</span><span class="s1"> &amp;&amp; (x + o.x &lt; </span><span class="s13">0</span><span class="s1"> || x + o.x &gt;= </span><span class="s12">COLS</span><span class="s1"> || y + o.y &gt;= </span><span class="s12">ROWS</span><span class="s1">)) {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span></span><span class="s7">return</span><span class="s1"> </span><span class="s7">true</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>}</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>}</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>}</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s7">return</span><span class="s1"> </span><span class="s7">false</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p7"><span class="s11"></span><br></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s7">function</span><span class="s1"> merge(board, piece) {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>piece.matrix.forEach((row, y) =&gt; {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>row.forEach((value, x) =&gt; {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span></span><span class="s7">if</span><span class="s1"> (value !== </span><span class="s13">0</span><span class="s1">) {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>board[y + piece.pos.y][x + piece.pos.x] = value;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>}</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>});</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>});</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p7"><span class="s11"></span><br></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s7">function</span><span class="s1"> rotate(matrix, dir) {</span></p>
-<p class="p8"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s1">// Transponer la matriz</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s7">for</span><span class="s1"> (</span><span class="s7">let</span><span class="s1"> y = </span><span class="s13">0</span><span class="s1">; y &lt; matrix.length; ++y) {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s7">for</span><span class="s1"> (</span><span class="s7">let</span><span class="s1"> x = </span><span class="s13">0</span><span class="s1">; x &lt; y; ++x) {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>[matrix[x][y], matrix[y][x]] = [matrix[y][x], matrix[x][y]];</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>}</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>}</span></p>
-<p class="p8"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s1">// Invertir filas si es sentido horario (1) o columnas si es antihorario (-1)</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s7">if</span><span class="s1"> (dir &gt; </span><span class="s13">0</span><span class="s1">) {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>matrix.forEach(row =&gt; row.reverse());</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>} </span><span class="s7">else</span><span class="s1"> {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>matrix.reverse();</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>}</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p7"><span class="s11"></span><br></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s7">function</span><span class="s1"> pieceRotate() {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s7">if</span><span class="s1"> (!isPlaying || isQuizActive) </span><span class="s7">return</span><span class="s1">;</span></p>
-<p class="p7"><span class="s11"></span><br></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s7">const</span><span class="s1"> pos = currentPiece.pos.x;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s7">let</span><span class="s1"> offset = </span><span class="s13">1</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>rotate(currentPiece.matrix, </span><span class="s13">1</span><span class="s1">); </span><span class="s14">// Siempre rotamos en sentido horario</span></p>
-<p class="p7"><span class="s11"></span><br></p>
-<p class="p8"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s1">// Corrección de patada (kick)</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s7">while</span><span class="s1"> (collide(board, currentPiece)) {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>currentPiece.pos.x += offset;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>offset = -(offset + (offset &gt; </span><span class="s13">0</span><span class="s1"> ? </span><span class="s13">1</span><span class="s1"> : -</span><span class="s13">1</span><span class="s1">)); </span><span class="s14">// 1, -2, 3, -4, ...</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s7">if</span><span class="s1"> (offset &gt; currentPiece.matrix.length) {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>rotate(currentPiece.matrix, -</span><span class="s13">1</span><span class="s1">); </span><span class="s14">// Si no se puede, revierte la rotación</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>currentPiece.pos.x = pos; </span><span class="s14">// Vuelve a la posición original</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span></span><span class="s7">return</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>}</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>}</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p7"><span class="s11"></span><br></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s7">function</span><span class="s1"> pieceDrop() {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s7">if</span><span class="s1"> (!isPlaying || isQuizActive) </span><span class="s7">return</span><span class="s1">;</span></p>
-<p class="p7"><span class="s11"></span><br></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>currentPiece.pos.y++;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s7">if</span><span class="s1"> (collide(board, currentPiece)) {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>currentPiece.pos.y--;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>merge(board, currentPiece);</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>checkLines();</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>newPiece();</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>}</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>dropCounter = </span><span class="s13">0</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p7"><span class="s11"></span><br></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s7">function</span><span class="s1"> pieceMove(dir) {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s7">if</span><span class="s1"> (!isPlaying || isQuizActive) </span><span class="s7">return</span><span class="s1">;</span></p>
-<p class="p7"><span class="s11"></span><br></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>currentPiece.pos.x += dir;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s7">if</span><span class="s1"> (collide(board, currentPiece)) {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>currentPiece.pos.x -= dir;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>}</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p7"><span class="s11"></span><br></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s7">function</span><span class="s1"> checkLines() {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s7">let</span><span class="s1"> linesCleared = </span><span class="s13">0</span><span class="s1">;</span></p>
-<p class="p7"><span class="s11"></span><br></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>outer: </span><span class="s7">for</span><span class="s1"> (</span><span class="s7">let</span><span class="s1"> y = </span><span class="s12">ROWS</span><span class="s1"> - </span><span class="s13">1</span><span class="s1">; y &gt;= </span><span class="s13">0</span><span class="s1">; --y) {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s7">for</span><span class="s1"> (</span><span class="s7">let</span><span class="s1"> x = </span><span class="s13">0</span><span class="s1">; x &lt; </span><span class="s12">COLS</span><span class="s1">; ++x) {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span></span><span class="s7">if</span><span class="s1"> (board[y][x] === </span><span class="s13">0</span><span class="s1">) {</span></p>
-<p class="p8"><span class="s4"><span class="Apple-converted-space">                        </span></span><span class="s7">continue</span><span class="s4"> outer; </span><span class="s1">// Línea incompleta, pasa a la siguiente</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>}</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>}</span></p>
-<p class="p7"><span class="s11"></span><br></p>
-<p class="p8"><span class="s4"><span class="Apple-converted-space">                </span></span><span class="s1">// Línea completa</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s7">const</span><span class="s1"> row = board.splice(y, </span><span class="s13">1</span><span class="s1">)[</span><span class="s13">0</span><span class="s1">].fill(</span><span class="s13">0</span><span class="s1">); </span><span class="s14">// Elimina la línea y crea una nueva vacía</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>board.unshift(row); </span><span class="s14">// Agrega la línea vacía al inicio</span></p>
-<p class="p8"><span class="s4"><span class="Apple-converted-space">                </span>y++; </span><span class="s1">// Vuelve a verificar la misma fila</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>linesCleared++;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>}</span></p>
-<p class="p7"><span class="s11"></span><br></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s7">if</span><span class="s1"> (linesCleared &gt; </span><span class="s13">0</span><span class="s1">) {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>updateScore(linesCleared);</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>lines += linesCleared;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>linesElement.innerText = lines;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>}</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p7"><span class="s11"></span><br></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s7">function</span><span class="s1"> updateScore(linesCleared) {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s7">const</span><span class="s1"> scoreMultiplier = [</span><span class="s13">0</span><span class="s1">, </span><span class="s13">100</span><span class="s1">, </span><span class="s13">300</span><span class="s1">, </span><span class="s13">500</span><span class="s1">, </span><span class="s13">800</span><span class="s1">]; </span><span class="s14">// Puntuación por 0, 1, 2, 3, 4 líneas</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s7">const</span><span class="s1"> points = scoreMultiplier[linesCleared] || </span><span class="s13">0</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>score += points;</span></p>
-<p class="p7"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
-<p class="p8"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s1">// Actualiza el progreso del desafío</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>challengeGoal -= points;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s7">if</span><span class="s1"> (challengeGoal &lt;= </span><span class="s13">0</span><span class="s1">) {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>challengeGoal = </span><span class="s13">0</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>startQuiz();</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>}</span></p>
-<p class="p7"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>scoreElement.innerText = score;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>challengeProgressElement.innerText = </span><span class="s9">`</span><span class="s1">${</span><span class="s13">500</span><span class="s1"> - challengeGoal}</span><span class="s9"> / 500`</span><span class="s1">;</span></p>
-<p class="p7"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
-<p class="p8"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s1">// Aumenta la velocidad ligeramente</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>dropInterval = </span><span class="s12">Math</span><span class="s1">.max(</span><span class="s13">100</span><span class="s1">, </span><span class="s12">INITIAL_SPEED</span><span class="s1"> - (lines * </span><span class="s13">20</span><span class="s1">));</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p7"><span class="s11"></span><br></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s7">function</span><span class="s1"> newPiece() {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>currentPiece = nextPiece;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>nextPiece = getRandomPiece();</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>drawNextPiece();</span></p>
-<p class="p7"><span class="s11"></span><br></p>
-<p class="p8"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s1">// Fin del juego: si la nueva pieza colisiona inmediatamente</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s7">if</span><span class="s1"> (collide(board, currentPiece)) {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>gameOver();</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s7">return</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>}</span></p>
-<p class="p7"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
-<p class="p8"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s1">// Si el desafío de tensión está en 0, lo reiniciamos</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s7">if</span><span class="s1"> (challengeGoal === </span><span class="s13">0</span><span class="s1"> &amp;&amp; !isQuizActive) {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>challengeGoal = </span><span class="s13">500</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>challengeProgressElement.innerText = </span><span class="s9">`0 / 500`</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>}</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p7"><span class="s11"></span><br></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s7">function</span><span class="s1"> gameOver() {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>isPlaying = </span><span class="s7">false</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>isQuizActive = </span><span class="s7">false</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>startButton.innerText = </span><span class="s9">`GAME OVER - Puntuación Final: </span><span class="s1">${score}</span><span class="s9">`</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>startButton.classList.remove(</span><span class="s9">'bg-lime-500'</span><span class="s1">, </span><span class="s9">'hover:bg-lime-600'</span><span class="s1">);</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>startButton.classList.add(</span><span class="s9">'bg-red-600'</span><span class="s1">, </span><span class="s9">'hover:bg-red-700'</span><span class="s1">);</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>console.log(</span><span class="s9">"Juego Terminado. Puntuación: "</span><span class="s1">, score);</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p7"><span class="s11"></span><br></p>
-<p class="p8"><span class="s4"><span class="Apple-converted-space">        </span></span><span class="s1">// --- BUCLE PRINCIPAL Y ANIMACIÓN ---</span></p>
-<p class="p7"><span class="s11"></span><br></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s7">function</span><span class="s1"> update(time = </span><span class="s13">0</span><span class="s1">) {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s7">if</span><span class="s1"> (!isPlaying || isQuizActive) {</span></p>
-<p class="p8"><span class="s4"><span class="Apple-converted-space">                </span>drawBoard(); </span><span class="s1">// Asegura que se dibuje la última posición</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>requestAnimationFrame(update);</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s7">return</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>}</span></p>
-<p class="p7"><span class="s11"></span><br></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s7">const</span><span class="s1"> deltaTime = time - lastTime;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>lastTime = time;</span></p>
-<p class="p7"><span class="s11"></span><br></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>dropCounter += deltaTime;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s7">if</span><span class="s1"> (dropCounter &gt; dropInterval) {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>pieceDrop();</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>}</span></p>
-<p class="p7"><span class="s11"></span><br></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>drawBoard();</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>requestAnimationFrame(update);</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p7"><span class="s11"></span><br></p>
-<p class="p8"><span class="s4"><span class="Apple-converted-space">        </span></span><span class="s1">// --- QUIZ (DESAFÍO DE TENSIÓN) ---</span></p>
-<p class="p7"><span class="s11"></span><br></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s7">function</span><span class="s1"> startQuiz() {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s7">if</span><span class="s1"> (availableQuizzes.length === </span><span class="s13">0</span><span class="s1">) {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>availableQuizzes = [...</span><span class="s12">QUIZ_BANK</span><span class="s1">]; </span><span class="s14">// Recargar el banco si se agotó</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>}</span></p>
-<p class="p7"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s7">const</span><span class="s1"> index = </span><span class="s12">Math</span><span class="s1">.floor(</span><span class="s12">Math</span><span class="s1">.random() * availableQuizzes.length);</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>currentQuiz = availableQuizzes.splice(index, </span><span class="s13">1</span><span class="s1">)[</span><span class="s13">0</span><span class="s1">];</span></p>
-<p class="p7"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>isQuizActive = </span><span class="s7">true</span><span class="s1">;</span></p>
-<p class="p7"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>quizQuestionElement.innerText = currentQuiz.question;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>quizOptionsElement.innerHTML = </span><span class="s9">''</span><span class="s1">;</span></p>
-<p class="p7"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s7">let</span><span class="s1"> selectedAnswer = </span><span class="s7">null</span><span class="s1">;</span></p>
-<p class="p7"><span class="s11"></span><br></p>
-<p class="p8"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s1">// Mezcla y renderiza las opciones</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s7">const</span><span class="s1"> shuffledOptions = currentQuiz.options.sort(() =&gt; </span><span class="s12">Math</span><span class="s1">.random() - </span><span class="s13">0.5</span><span class="s1">);</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>shuffledOptions.forEach(option =&gt; {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s7">const</span><span class="s1"> button = document.createElement(</span><span class="s9">'button'</span><span class="s1">);</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>button.classList.add(</span><span class="s9">'option-btn'</span><span class="s1">);</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>button.innerText = option;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>button.addEventListener(</span><span class="s9">'click'</span><span class="s1">, () =&gt; {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>document.querySelectorAll(</span><span class="s9">'.option-btn'</span><span class="s1">).forEach(btn =&gt; btn.classList.remove(</span><span class="s9">'selected'</span><span class="s1">));</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>button.classList.add(</span><span class="s9">'selected'</span><span class="s1">);</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>selectedAnswer = option;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>});</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>quizOptionsElement.appendChild(button);</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>});</span></p>
-<p class="p7"><span class="s11"></span><br></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>quizSubmitButton.onclick = () =&gt; {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s7">if</span><span class="s1"> (selectedAnswer !== </span><span class="s7">null</span><span class="s1">) {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>checkQuizAnswer(selectedAnswer);</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>}</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>};</span></p>
-<p class="p7"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>quizModal.classList.add(</span><span class="s9">'active'</span><span class="s1">);</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p7"><span class="s11"></span><br></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s7">function</span><span class="s1"> checkQuizAnswer(answer) {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>quizModal.classList.remove(</span><span class="s9">'active'</span><span class="s1">);</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>isQuizActive = </span><span class="s7">false</span><span class="s1">;</span></p>
-<p class="p7"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s7">if</span><span class="s1"> (answer === currentQuiz.answer) {</span></p>
-<p class="p8"><span class="s4"><span class="Apple-converted-space">                </span></span><span class="s1">// Respuesta Correcta: ¡Gran Bonificación de Puntos!</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s7">const</span><span class="s1"> bonus = currentQuiz.bonus;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>score += bonus;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>scoreElement.innerText = score;</span></p>
-<p class="p7"><span class="s1"><span class="Apple-converted-space">                </span></span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>showFeedback(</span><span class="s9">`</span><span class="s15">🎉</span><span class="s9"> ¡RESPUESTA CORRECTA! Bonificación de +</span><span class="s1">${bonus}</span><span class="s9"> puntos. </span><span class="s1">${currentQuiz.feedback}</span><span class="s9">`</span><span class="s1">);</span></p>
-<p class="p7"><span class="s11"></span><br></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>} </span><span class="s7">else</span><span class="s1"> {</span></p>
-<p class="p8"><span class="s4"><span class="Apple-converted-space">                </span></span><span class="s1">// Respuesta Incorrecta: No hay bonificación</span></p>
-<p class="p6"><span class="s4"><span class="Apple-converted-space">                </span>showFeedback(</span><span class="s1">`</span><span class="s16">❌</span><span class="s1"> RESPUESTA INCORRECTA. La respuesta correcta era **</span><span class="s4">${currentQuiz.answer}</span><span class="s1">**. ¡A repasar!`</span><span class="s4">, </span><span class="s1">'#FF0000'</span><span class="s4">);</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>}</span></p>
-<p class="p7"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
-<p class="p8"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s1">// Reiniciar el objetivo del desafío</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>challengeGoal = </span><span class="s13">500</span><span class="s1">;<span class="Apple-converted-space"> </span></span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>challengeProgressElement.innerText = </span><span class="s9">`0 / 500`</span><span class="s1">;</span></p>
-<p class="p7"><span class="s11"></span><br></p>
-<p class="p8"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s1">// Reanudar el juego</span></p>
-<p class="p8"><span class="s4"><span class="Apple-converted-space">            </span>lastTime = performance.now(); </span><span class="s1">// Resetear el tiempo para evitar caídas inmediatas</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>requestAnimationFrame(update);</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p7"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s7">function</span><span class="s1"> showFeedback(message, color = </span><span class="s9">'#00FFD5'</span><span class="s1">) {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s7">const</span><span class="s1"> tempModal = document.createElement(</span><span class="s9">'div'</span><span class="s1">);</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>tempModal.classList.add(</span><span class="s9">'modal'</span><span class="s1">, </span><span class="s9">'active'</span><span class="s1">);</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>tempModal.style.backgroundColor = </span><span class="s9">'rgba(0, 0, 0, 0.7)'</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>tempModal.innerHTML = </span><span class="s9">`</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">                </span>&lt;div class="modal-content" style="border: 3px solid </span><span class="s4">${color}</span><span class="s1">;"&gt;</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;h2 style="color: </span><span class="s4">${color}</span><span class="s1">;"&gt;</span><span class="s4">${color === </span><span class="s1">'#00FFD5'</span><span class="s4"> ? </span><span class="s1">'¡ÉXITO ARMONICO!'</span><span class="s4"> : </span><span class="s1">'¡ERROR ARMONICO!'</span><span class="s4">}</span><span class="s1">&lt;/h2&gt;</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;p style="color: #E0E0E0;"&gt;</span><span class="s4">${message}</span><span class="s1">&lt;/p&gt;</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">            </span>`</span><span class="s4">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>document.body.appendChild(tempModal);</span></p>
-<p class="p7"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>setTimeout(() =&gt; {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>tempModal.classList.remove(</span><span class="s9">'active'</span><span class="s1">);</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>setTimeout(() =&gt; tempModal.remove(), </span><span class="s13">300</span><span class="s1">);</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>}, </span><span class="s13">3000</span><span class="s1">);</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p7"><span class="s11"></span><br></p>
-<p class="p8"><span class="s4"><span class="Apple-converted-space">        </span></span><span class="s1">// --- GESTIÓN DE EVENTOS ---</span></p>
-<p class="p7"><span class="s11"></span><br></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s7">function</span><span class="s1"> setupControls() {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>document.addEventListener(</span><span class="s9">'keydown'</span><span class="s1">, (e) =&gt; {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s7">if</span><span class="s1"> (!isPlaying || isQuizActive) </span><span class="s7">return</span><span class="s1">;</span></p>
-<p class="p7"><span class="s11"></span><br></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s7">if</span><span class="s1"> (e.key === </span><span class="s9">'ArrowLeft'</span><span class="s1">) {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>pieceMove(-</span><span class="s13">1</span><span class="s1">);</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>} </span><span class="s7">else</span><span class="s1"> </span><span class="s7">if</span><span class="s1"> (e.key === </span><span class="s9">'ArrowRight'</span><span class="s1">) {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>pieceMove(</span><span class="s13">1</span><span class="s1">);</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>} </span><span class="s7">else</span><span class="s1"> </span><span class="s7">if</span><span class="s1"> (e.key === </span><span class="s9">'ArrowDown'</span><span class="s1">) {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>pieceDrop();</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>} </span><span class="s7">else</span><span class="s1"> </span><span class="s7">if</span><span class="s1"> (e.key === </span><span class="s9">'ArrowUp'</span><span class="s1"> || e.key === </span><span class="s9">'r'</span><span class="s1"> || e.key === </span><span class="s9">'R'</span><span class="s1">) {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>pieceRotate();</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>}</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>});</span></p>
-<p class="p7"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
-<p class="p8"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s1">// Controles móviles (touch/click)</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>document.querySelectorAll(</span><span class="s9">'.control-btn'</span><span class="s1">).forEach(button =&gt; {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>button.addEventListener(</span><span class="s9">'click'</span><span class="s1">, (e) =&gt; {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span></span><span class="s7">const</span><span class="s1"> action = e.currentTarget.dataset.action;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span></span><span class="s7">if</span><span class="s1"> (!isPlaying || isQuizActive) </span><span class="s7">return</span><span class="s1">;</span></p>
-<p class="p7"><span class="s11"></span><br></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span></span><span class="s7">if</span><span class="s1"> (action === </span><span class="s9">'left'</span><span class="s1">) pieceMove(-</span><span class="s13">1</span><span class="s1">);</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span></span><span class="s7">else</span><span class="s1"> </span><span class="s7">if</span><span class="s1"> (action === </span><span class="s9">'right'</span><span class="s1">) pieceMove(</span><span class="s13">1</span><span class="s1">);</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span></span><span class="s7">else</span><span class="s1"> </span><span class="s7">if</span><span class="s1"> (action === </span><span class="s9">'down'</span><span class="s1">) pieceDrop();</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span></span><span class="s7">else</span><span class="s1"> </span><span class="s7">if</span><span class="s1"> (action === </span><span class="s9">'rotate'</span><span class="s1">) pieceRotate();</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>});</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>});</span></p>
-<p class="p7"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
-<p class="p8"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s1">// Botón de Inicio</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>startButton.addEventListener(</span><span class="s9">'click'</span><span class="s1">, initGame);</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>document.addEventListener(</span><span class="s9">'keydown'</span><span class="s1">, (e) =&gt; {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s7">if</span><span class="s1"> (e.key === </span><span class="s9">'Enter'</span><span class="s1"> &amp;&amp; !isPlaying) {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>initGame();</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>}</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>});</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p7"><span class="s11"></span><br></p>
-<p class="p8"><span class="s4"><span class="Apple-converted-space">        </span></span><span class="s1">// --- INICIALIZACIÓN ---</span></p>
-<p class="p7"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s7">function</span><span class="s1"> initGame() {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s7">if</span><span class="s1"> (isPlaying) </span><span class="s7">return</span><span class="s1">;</span></p>
-<p class="p7"><span class="s11"></span><br></p>
-<p class="p8"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s1">// Resetear estado</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>board = createEmptyBoard();</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>score = </span><span class="s13">0</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>lines = </span><span class="s13">0</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>challengeGoal = </span><span class="s13">500</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>availableQuizzes = [...</span><span class="s12">QUIZ_BANK</span><span class="s1">];</span></p>
-<p class="p7"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>scoreElement.innerText = score;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>linesElement.innerText = lines;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>challengeProgressElement.innerText = </span><span class="s9">`0 / 500`</span><span class="s1">;</span></p>
-<p class="p7"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>startButton.innerText = </span><span class="s9">'JUGANDO...'</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>startButton.classList.remove(</span><span class="s9">'bg-red-600'</span><span class="s1">, </span><span class="s9">'hover:bg-red-700'</span><span class="s1">);</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>startButton.classList.add(</span><span class="s9">'bg-lime-500'</span><span class="s1">, </span><span class="s9">'hover:bg-lime-600'</span><span class="s1">);</span></p>
-<p class="p7"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>nextPiece = getRandomPiece();</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>newPiece();</span></p>
-<p class="p7"><span class="s11"></span><br></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>isPlaying = </span><span class="s7">true</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>lastTime = performance.now();</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>update();</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p7"><span class="s11"></span><br></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>setupControls();</span></p>
-<p class="p8"><span class="s4"><span class="Apple-converted-space">        </span>drawBoard(); </span><span class="s1">// Dibuja el tablero inicial vacío</span></p>
-<p class="p7"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
-<p class="p2"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;/</span><span class="s1">script</span><span class="s3">&gt;</span></p>
-<p class="p2"><span class="s3">&lt;/</span><span class="s1">body</span><span class="s3">&gt;</span></p>
-<p class="p2"><span class="s3">&lt;/</span><span class="s1">html</span><span class="s3">&gt;</span></p>
+
+    <div id="game-container">
+        
+        <!-- Panel de Información -->
+        <div id="info-panel">
+            <h1 class="text-2xl text-center font-bold text-teal-400 mb-4">Armonía Bloqueada</h1>
+            
+            <div class="info-card">
+                <h3>Puntuación</h3>
+                <p id="score">0</p>
+            </div>
+            
+            <div class="info-card">
+                <h3>Líneas</h3>
+                <p id="lines">0</p>
+            </div>
+            
+            <div class="info-card">
+                <h3>Desafío de Tensión</h3>
+                <p id="challenge-progress">0 / 500</p>
+            </div>
+
+            <div class="info-card">
+                <h3>Siguiente Pieza</h3>
+                <div id="next-piece-display"></div>
+            </div>
+
+            <button id="start-button" class="mt-4 bg-lime-500 hover:bg-lime-600 text-black font-bold py-3 px-6 rounded-lg transition duration-200">
+                INICIAR JUEGO (ENTER)
+            </button>
+        </div>
+
+        <!-- Área de Juego -->
+        <div id="canvas-wrapper">
+            <canvas id="game-canvas" width="300" height="600"></canvas>
+        </div>
+
+        <!-- Controles Móviles -->
+        <div class="controls md:hidden">
+            <button class="control-btn" data-action="left">Izquierda</button>
+            <button class="control-btn" data-action="down">Abajo</button>
+            <button class="control-btn" data-action="rotate">Rotar</button>
+            <button class="control-btn" data-action="right">Derecha</button>
+        </div>
+        
+    </div>
+
+    <!-- Modal del Desafío de Tensión (Quiz) -->
+    <div id="quiz-modal" class="modal">
+        <div class="modal-content">
+            <h2>¡DESAFÍO DE TENSIÓN!</h2>
+            <p id="quiz-question"></p>
+            <div id="quiz-options" class="mb-4">
+                <!-- Opciones se inyectan aquí -->
+            </div>
+            <button id="quiz-submit" class="quiz-submit-btn hover:bg-yellow-400">RESPONDER</button>
+        </div>
+    </div>
+
+    <script>
+        // --- CONSTANTES DEL JUEGO ---
+        const COLS = 10;
+        const ROWS = 20;
+        const BLOCK_SIZE = 30;
+        const BOARD_WIDTH = COLS * BLOCK_SIZE;
+        const BOARD_HEIGHT = ROWS * BLOCK_SIZE;
+        const INITIAL_SPEED = 1000; // ms
+
+        // --- SETUP CANVAS ---
+        const canvas = document.getElementById('game-canvas');
+        const ctx = canvas.getContext('2d');
+        canvas.width = BOARD_WIDTH;
+        canvas.height = BOARD_HEIGHT;
+        ctx.scale(1, 1);
+
+        // --- ESTADO DEL JUEGO ---
+        let board = Array(ROWS).fill(null).map(() => Array(COLS).fill(0)); // 0: vacío
+        let currentPiece = null;
+        let nextPiece = null;
+        let score = 0;
+        let lines = 0;
+        let isPlaying = false;
+        let dropCounter = 0;
+        let dropInterval = INITIAL_SPEED;
+        let lastTime = 0;
+        let challengeGoal = 500;
+        let isQuizActive = false;
+
+        // --- ELEMENTOS DEL DOM ---
+        const scoreElement = document.getElementById('score');
+        const linesElement = document.getElementById('lines');
+        const challengeProgressElement = document.getElementById('challenge-progress');
+        const startButton = document.getElementById('start-button');
+        const nextPieceDisplay = document.getElementById('next-piece-display');
+        const quizModal = document.getElementById('quiz-modal');
+        const quizQuestionElement = document.getElementById('quiz-question');
+        const quizOptionsElement = document.getElementById('quiz-options');
+        const quizSubmitButton = document.getElementById('quiz-submit');
+
+        // --- DEFINICIÓN DE PIEZAS Y COLORES (Basado en el círculo de quintas para un toque musical) ---
+        const PIECES = [
+            // I (Do)
+            [[0, 0, 0, 0], [1, 1, 1, 1], [0, 0, 0, 0], [0, 0, 0, 0]],
+            // J (Sol)
+            [[2, 0, 0], [2, 2, 2], [0, 0, 0]],
+            // L (Re)
+            [[0, 0, 3], [3, 3, 3], [0, 0, 0]],
+            // O (La)
+            [[4, 4], [4, 4]],
+            // S (Mi)
+            [[0, 5, 5], [5, 5, 0], [0, 0, 0]],
+            // T (Si)
+            [[0, 6, 0], [6, 6, 6], [0, 0, 0]],
+            // Z (Fa)
+            [[7, 7, 0], [0, 7, 7], [0, 0, 0]]
+        ];
+
+        const COLORS = [
+            '#000000', // 0: Fondo (Negro)
+            '#00FFFF', // 1: I - Cyan (Do)
+            '#0000FF', // 2: J - Azul (Sol)
+            '#FF7F00', // 3: L - Naranja (Re)
+            '#FFFF00', // 4: O - Amarillo (La)
+            '#00FF00', // 5: S - Verde (Mi)
+            '#800080', // 6: T - Púrpura (Si)
+            '#FF0000'  // 7: Z - Rojo (Fa)
+        ];
+
+        // --- BANCO DE PREGUNTAS (Tensiones de Acordes) ---
+        const QUIZ_BANK = [
+            {
+                question: "¿Cuál es la tensión más común disponible en un acorde **Major 7** (Maj7), como Cmaj7?",
+                options: ["b9", "9", "#11", "b13"],
+                answer: "9",
+                bonus: 600,
+                feedback: "¡Correcto! La 9ª es la tensión por defecto que mejor suena en un acorde Maj7."
+            },
+            {
+                question: "¿Qué tensión **debe evitarse** (avoid note) en un acorde **Dominante 7** (V7) si no está alterado?",
+                options: ["9", "13", "#11", "b9"],
+                answer: "#11",
+                bonus: 800,
+                feedback: "¡Genial! La #11 no se evita en un dominante 7, pero la 4ª (unísono con la 11ª) sí que es la avoid note más común si no está alterado." // Simplificando para el contexto Tetris: la #11 está asociada a Dominante Lydian.
+            },
+            {
+                question: "En un acorde **Dominante Alterado** (por ejemplo, G7alt), ¿cuál de estas tensiones es **imprescindible** para darle su sonido 'alterado'?",
+                options: ["9", "b9", "13", "11"],
+                answer: "b9",
+                bonus: 1000,
+                feedback: "¡Excelente! Un dominante alterado suele incluir b9, #9, b5 o #5 (b13 o #11) para crear la máxima tensión."
+            },
+            {
+                question: "¿Cuál es la tensión por excelencia que distingue a un acorde **Menor 7** (min7) de un acorde **Menor 6** (min6)?",
+                options: ["b9", "11", "13", "b13"],
+                answer: "11",
+                bonus: 600,
+                feedback: "¡Así es! La 11ª (perfecta) es la tensión por defecto para los acordes Min7 (aunque a menudo se omite la 9ª)."
+            },
+            {
+                question: "Si utilizas la escala **Lydian Dominant** sobre un acorde V7, ¿qué tensión peculiar estás introduciendo?",
+                options: ["b9", "#9", "#11", "b13"],
+                answer: "#11",
+                bonus: 1200,
+                feedback: "¡Perfecto! El #11 es la nota característica del modo Lydian, que crea una dominante muy brillante."
+            }
+        ];
+        let availableQuizzes = [...QUIZ_BANK];
+        let currentQuiz = null;
+
+        // --- FUNCIONES DE UTILIDAD ---
+
+        function getRandomPiece() {
+            const index = Math.floor(Math.random() * PIECES.length);
+            const matrix = PIECES[index];
+            const color = COLORS[index + 1];
+
+            return {
+                matrix,
+                pos: { x: Math.floor(COLS / 2) - Math.floor(matrix[0].length / 2), y: 0 },
+                color: color
+            };
+        }
+
+        function createEmptyBoard() {
+            return Array(ROWS).fill(null).map(() => Array(COLS).fill(0));
+        }
+
+        function drawBlock(x, y, color) {
+            ctx.fillStyle = color;
+            ctx.fillRect(x * BLOCK_SIZE, y * BLOCK_SIZE, BLOCK_SIZE, BLOCK_SIZE);
+            ctx.strokeStyle = '#222';
+            ctx.strokeRect(x * BLOCK_SIZE, y * BLOCK_SIZE, BLOCK_SIZE, BLOCK_SIZE);
+        }
+
+        function drawBoard() {
+            // Dibuja el tablero fijo
+            for (let y = 0; y < ROWS; y++) {
+                for (let x = 0; x < COLS; x++) {
+                    if (board[y][x]) {
+                        drawBlock(x, y, COLORS[board[y][x]]);
+                    } else {
+                        // Fondo del bloque
+                        ctx.fillStyle = '#111';
+                        ctx.fillRect(x * BLOCK_SIZE, y * BLOCK_SIZE, BLOCK_SIZE, BLOCK_SIZE);
+                    }
+                }
+            }
+            
+            // Dibuja la pieza actual
+            if (currentPiece) {
+                drawMatrix(currentPiece.matrix, currentPiece.pos);
+            }
+        }
+        
+        function drawMatrix(matrix, offset) {
+            matrix.forEach((row, y) => {
+                row.forEach((value, x) => {
+                    if (value) {
+                        drawBlock(x + offset.x, y + offset.y, currentPiece.color);
+                    }
+                });
+            });
+        }
+
+        function drawNextPiece() {
+            nextPieceDisplay.innerHTML = '';
+            
+            if (!nextPiece) return;
+
+            nextPiece.matrix.forEach((row, y) => {
+                row.forEach((value, x) => {
+                    const block = document.createElement('div');
+                    block.classList.add('next-block');
+                    if (value) {
+                        block.style.backgroundColor = nextPiece.color;
+                        block.style.border = '1px solid #000';
+                        block.style.borderRadius = '2px';
+                    }
+                    // Posiciona correctamente en el grid 4x4
+                    block.style.gridRow = y + 1;
+                    block.style.gridColumn = x + 1;
+
+                    nextPieceDisplay.appendChild(block);
+                });
+            });
+        }
+
+        function collide(board, piece) {
+            const m = piece.matrix;
+            const o = piece.pos;
+            for (let y = 0; y < m.length; y++) {
+                for (let x = 0; x < m[y].length; x++) {
+                    if (m[y][x] !== 0 && (board[y + o.y] && board[y + o.y][x + o.x]) !== 0) {
+                        return true;
+                    }
+                    if (m[y][x] !== 0 && (x + o.x < 0 || x + o.x >= COLS || y + o.y >= ROWS)) {
+                        return true;
+                    }
+                }
+            }
+            return false;
+        }
+
+        function merge(board, piece) {
+            piece.matrix.forEach((row, y) => {
+                row.forEach((value, x) => {
+                    if (value !== 0) {
+                        board[y + piece.pos.y][x + piece.pos.x] = value;
+                    }
+                });
+            });
+        }
+
+        function rotate(matrix, dir) {
+            // Transponer la matriz
+            for (let y = 0; y < matrix.length; ++y) {
+                for (let x = 0; x < y; ++x) {
+                    [matrix[x][y], matrix[y][x]] = [matrix[y][x], matrix[x][y]];
+                }
+            }
+            // Invertir filas si es sentido horario (1) o columnas si es antihorario (-1)
+            if (dir > 0) {
+                matrix.forEach(row => row.reverse());
+            } else {
+                matrix.reverse();
+            }
+        }
+
+        function pieceRotate() {
+            if (!isPlaying || isQuizActive) return;
+
+            const pos = currentPiece.pos.x;
+            let offset = 1;
+            rotate(currentPiece.matrix, 1); // Siempre rotamos en sentido horario
+
+            // Corrección de patada (kick)
+            while (collide(board, currentPiece)) {
+                currentPiece.pos.x += offset;
+                offset = -(offset + (offset > 0 ? 1 : -1)); // 1, -2, 3, -4, ...
+                if (offset > currentPiece.matrix.length) {
+                    rotate(currentPiece.matrix, -1); // Si no se puede, revierte la rotación
+                    currentPiece.pos.x = pos; // Vuelve a la posición original
+                    return;
+                }
+            }
+        }
+
+        function pieceDrop() {
+            if (!isPlaying || isQuizActive) return;
+
+            currentPiece.pos.y++;
+            if (collide(board, currentPiece)) {
+                currentPiece.pos.y--;
+                merge(board, currentPiece);
+                checkLines();
+                newPiece();
+            }
+            dropCounter = 0;
+        }
+
+        function pieceMove(dir) {
+            if (!isPlaying || isQuizActive) return;
+
+            currentPiece.pos.x += dir;
+            if (collide(board, currentPiece)) {
+                currentPiece.pos.x -= dir;
+            }
+        }
+
+        function checkLines() {
+            let linesCleared = 0;
+
+            outer: for (let y = ROWS - 1; y >= 0; --y) {
+                for (let x = 0; x < COLS; ++x) {
+                    if (board[y][x] === 0) {
+                        continue outer; // Línea incompleta, pasa a la siguiente
+                    }
+                }
+
+                // Línea completa
+                const row = board.splice(y, 1)[0].fill(0); // Elimina la línea y crea una nueva vacía
+                board.unshift(row); // Agrega la línea vacía al inicio
+                y++; // Vuelve a verificar la misma fila
+                linesCleared++;
+            }
+
+            if (linesCleared > 0) {
+                updateScore(linesCleared);
+                lines += linesCleared;
+                linesElement.innerText = lines;
+            }
+        }
+
+        function updateScore(linesCleared) {
+            const scoreMultiplier = [0, 100, 300, 500, 800]; // Puntuación por 0, 1, 2, 3, 4 líneas
+            const points = scoreMultiplier[linesCleared] || 0;
+            score += points;
+            
+            // Actualiza el progreso del desafío
+            challengeGoal -= points;
+            if (challengeGoal <= 0) {
+                challengeGoal = 0;
+                startQuiz();
+            }
+            
+            scoreElement.innerText = score;
+            challengeProgressElement.innerText = `${500 - challengeGoal} / 500`;
+            
+            // Aumenta la velocidad ligeramente
+            dropInterval = Math.max(100, INITIAL_SPEED - (lines * 20));
+        }
+
+        function newPiece() {
+            currentPiece = nextPiece;
+            nextPiece = getRandomPiece();
+            drawNextPiece();
+
+            // Fin del juego: si la nueva pieza colisiona inmediatamente
+            if (collide(board, currentPiece)) {
+                gameOver();
+                return;
+            }
+            
+            // Si el desafío de tensión está en 0, lo reiniciamos
+            if (challengeGoal === 0 && !isQuizActive) {
+                challengeGoal = 500;
+                challengeProgressElement.innerText = `0 / 500`;
+            }
+        }
+
+        function gameOver() {
+            isPlaying = false;
+            isQuizActive = false;
+            startButton.innerText = `GAME OVER - Puntuación Final: ${score}`;
+            startButton.classList.remove('bg-lime-500', 'hover:bg-lime-600');
+            startButton.classList.add('bg-red-600', 'hover:bg-red-700');
+            console.log("Juego Terminado. Puntuación: ", score);
+        }
+
+        // --- BUCLE PRINCIPAL Y ANIMACIÓN ---
+
+        function update(time = 0) {
+            if (!isPlaying || isQuizActive) {
+                drawBoard(); // Asegura que se dibuje la última posición
+                requestAnimationFrame(update);
+                return;
+            }
+
+            const deltaTime = time - lastTime;
+            lastTime = time;
+
+            dropCounter += deltaTime;
+            if (dropCounter > dropInterval) {
+                pieceDrop();
+            }
+
+            drawBoard();
+            requestAnimationFrame(update);
+        }
+
+        // --- QUIZ (DESAFÍO DE TENSIÓN) ---
+
+        function startQuiz() {
+            if (availableQuizzes.length === 0) {
+                availableQuizzes = [...QUIZ_BANK]; // Recargar el banco si se agotó
+            }
+            
+            const index = Math.floor(Math.random() * availableQuizzes.length);
+            currentQuiz = availableQuizzes.splice(index, 1)[0];
+            
+            isQuizActive = true;
+            
+            quizQuestionElement.innerText = currentQuiz.question;
+            quizOptionsElement.innerHTML = '';
+            
+            let selectedAnswer = null;
+
+            // Mezcla y renderiza las opciones
+            const shuffledOptions = currentQuiz.options.sort(() => Math.random() - 0.5);
+            shuffledOptions.forEach(option => {
+                const button = document.createElement('button');
+                button.classList.add('option-btn');
+                button.innerText = option;
+                button.addEventListener('click', () => {
+                    document.querySelectorAll('.option-btn').forEach(btn => btn.classList.remove('selected'));
+                    button.classList.add('selected');
+                    selectedAnswer = option;
+                });
+                quizOptionsElement.appendChild(button);
+            });
+
+            quizSubmitButton.onclick = () => {
+                if (selectedAnswer !== null) {
+                    checkQuizAnswer(selectedAnswer);
+                }
+            };
+            
+            quizModal.classList.add('active');
+        }
+
+        function checkQuizAnswer(answer) {
+            quizModal.classList.remove('active');
+            isQuizActive = false;
+            
+            if (answer === currentQuiz.answer) {
+                // Respuesta Correcta: ¡Gran Bonificación de Puntos!
+                const bonus = currentQuiz.bonus;
+                score += bonus;
+                scoreElement.innerText = score;
+                
+                showFeedback(`🎉 ¡RESPUESTA CORRECTA! Bonificación de +${bonus} puntos. ${currentQuiz.feedback}`);
+
+            } else {
+                // Respuesta Incorrecta: No hay bonificación
+                showFeedback(`❌ RESPUESTA INCORRECTA. La respuesta correcta era **${currentQuiz.answer}**. ¡A repasar!`, '#FF0000');
+            }
+            
+            // Reiniciar el objetivo del desafío
+            challengeGoal = 500; 
+            challengeProgressElement.innerText = `0 / 500`;
+
+            // Reanudar el juego
+            lastTime = performance.now(); // Resetear el tiempo para evitar caídas inmediatas
+            requestAnimationFrame(update);
+        }
+        
+        function showFeedback(message, color = '#00FFD5') {
+            const tempModal = document.createElement('div');
+            tempModal.classList.add('modal', 'active');
+            tempModal.style.backgroundColor = 'rgba(0, 0, 0, 0.7)';
+            tempModal.innerHTML = `
+                <div class="modal-content" style="border: 3px solid ${color};">
+                    <h2 style="color: ${color};">${color === '#00FFD5' ? '¡ÉXITO ARMONICO!' : '¡ERROR ARMONICO!'}</h2>
+                    <p style="color: #E0E0E0;">${message}</p>
+                </div>
+            `;
+            document.body.appendChild(tempModal);
+            
+            setTimeout(() => {
+                tempModal.classList.remove('active');
+                setTimeout(() => tempModal.remove(), 300);
+            }, 3000);
+        }
+
+        // --- GESTIÓN DE EVENTOS ---
+
+        function setupControls() {
+            document.addEventListener('keydown', (e) => {
+                if (!isPlaying || isQuizActive) return;
+
+                if (e.key === 'ArrowLeft') {
+                    pieceMove(-1);
+                } else if (e.key === 'ArrowRight') {
+                    pieceMove(1);
+                } else if (e.key === 'ArrowDown') {
+                    pieceDrop();
+                } else if (e.key === 'ArrowUp' || e.key === 'r' || e.key === 'R') {
+                    pieceRotate();
+                }
+            });
+            
+            // Controles móviles (touch/click)
+            document.querySelectorAll('.control-btn').forEach(button => {
+                button.addEventListener('click', (e) => {
+                    const action = e.currentTarget.dataset.action;
+                    if (!isPlaying || isQuizActive) return;
+
+                    if (action === 'left') pieceMove(-1);
+                    else if (action === 'right') pieceMove(1);
+                    else if (action === 'down') pieceDrop();
+                    else if (action === 'rotate') pieceRotate();
+                });
+            });
+            
+            // Botón de Inicio
+            startButton.addEventListener('click', initGame);
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' && !isPlaying) {
+                    initGame();
+                }
+            });
+        }
+
+        // --- INICIALIZACIÓN ---
+        
+        function initGame() {
+            if (isPlaying) return;
+
+            // Resetear estado
+            board = createEmptyBoard();
+            score = 0;
+            lines = 0;
+            challengeGoal = 500;
+            availableQuizzes = [...QUIZ_BANK];
+            
+            scoreElement.innerText = score;
+            linesElement.innerText = lines;
+            challengeProgressElement.innerText = `0 / 500`;
+            
+            startButton.innerText = 'JUGANDO...';
+            startButton.classList.remove('bg-red-600', 'hover:bg-red-700');
+            startButton.classList.add('bg-lime-500', 'hover:bg-lime-600');
+            
+            nextPiece = getRandomPiece();
+            newPiece();
+
+            isPlaying = true;
+            lastTime = performance.now();
+            update();
+        }
+
+        setupControls();
+        drawBoard(); // Dibuja el tablero inicial vacío
+        
+    </script>
 </body>
 </html>
